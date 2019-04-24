@@ -10,13 +10,12 @@ export interface IconProps extends Omit<React.HTMLProps<HTMLElement>, 'size'> {
      * MDI Icon name (hyphenated)
      * https://materialdesignicons.com/
      */
-    children?: any;
-    name?: IconType;
+    name: IconType;
 
     /**
      * fallback icon in case primary icon isn't in iconmap
      */
-    fallback?: string;
+    fallback?: IconType;
 
     /**
      * Icon size (in px or other units)
@@ -33,8 +32,7 @@ export interface IconProps extends Omit<React.HTMLProps<HTMLElement>, 'size'> {
 }
 
 export function Icon(props: IconProps) {
-    const { size, children, className, innerRef, fallback, onClick, ...rest } = props;
-    const name: IconType = props.name || props.children;
+    const { size, children, name, className, innerRef, fallback, onClick, ...rest } = props;
 
     const inlineStyle = { ...props.style };
     if (size) inlineStyle.fontSize = size;
