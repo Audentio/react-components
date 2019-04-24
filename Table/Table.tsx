@@ -4,7 +4,7 @@ import { ERD } from '../ERD';
 import TablePagination from './Pagination';
 import style from './Table.scss';
 
-interface TableProps {
+export interface TableProps {
     className?: string;
     rows: Array<Object>;
 
