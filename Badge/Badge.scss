@@ -1,0 +1,21 @@
+.badge {
+    display: block;
+    background: $color-inputBg;
+    color: $color-contentText;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    padding: 4px;
+    border-radius: $radius-lg;
+    min-width: 20px;
+
+    @include light-theme() {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+}
+
+.size__sm {
+    font-size: $font-size-xs;
+    padding: 3px;
+    min-width: 18px;
+}

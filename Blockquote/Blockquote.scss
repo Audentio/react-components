@@ -1,0 +1,14 @@
+.blockquote {
+    border-left: 2px solid $color-border;
+    padding: 4px $gutter-sm;
+    margin-bottom: $gutter;
+    margin-top: $gutter;
+    color: $color-secondaryText;
+    font-style: italic;
+
+    footer {
+        margin-top: 5px;
+        color: $color-secondaryText;
+        line-height: 1.7;
+    }
+}

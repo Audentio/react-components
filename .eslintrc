@@ -1,0 +1,6 @@
+{
+    "extends": ["@audentio/standard", "prettier", "prettier/react"],
+    "rules": {
+        "react/destructuring-assignment": "off"
+    }
+}

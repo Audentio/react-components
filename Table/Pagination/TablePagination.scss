@@ -1,0 +1,94 @@
+.container {
+    // color: $color-faintText;
+    background: $color-pillBg;
+    padding: $gutter;
+    border-top: 1px solid $color-contentBg;
+
+    @if ($theme == light) {
+        background: $color-cardBg;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loading {
+    margin-right: 5px;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: $font-size-sm;
+
+    .arrow {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 3rem;
+        line-height: 0;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &.disabled {
+            opacity: 0.2;
+            pointer-events: none;
+        }
+    }
+}
+
+.meta {
+    color: $color-faintText;
+}
+
+.pageJump {
+    background: $color-pillBg;
+    border-radius: $radius;
+    padding: $gutter;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: $gutter-sm;
+    width: 150px;
+
+    &:after {
+        border: solid transparent;
+        content: ' ';
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(0, 0, 0, 0);
+        border-width: 5px;
+        top: 100%;
+        left: 50%;
+        margin-top: -$gutter-sm;
+        margin-left: -5px;
+        border-top-color: $color-pillBg;
+    }
+
+    strong {
+        display: block;
+        margin-bottom: $gutter;
+        font-weight: $font-weight-semibold;
+    }
+
+    form > div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &_input {
+        width: auto;
+        margin-right: 5px;
+
+        input {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }
+}

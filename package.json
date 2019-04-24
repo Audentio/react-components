@@ -1,0 +1,25 @@
+{
+  "name": "@audentio/components",
+  "version": "1.0.0",
+  "description": "Common react components",
+  "author": "Audentio",
+  "license": "ISC",
+  "dependencies": {
+    "@atlaskit/layer-manager": "^6.0.3",
+    "@audentio/utils": "^4.0.0",
+    "@mdi/font": "^3.6.95",
+    "date-fns": "^2.0.0-alpha.27",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "slate": "^0.45.0",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@audentio/eslint-config-standard": "^2.0.1",
+    "enzyme": "^3.9.0",
+    "eslint-config-prettier": "^4.1.0",
+    "lolex": "^4.0.1",
+    "stylelint-config-audentio": "^1.0.1",
+    "stylelint-config-standard": "^18.3.0"
+  }
+}

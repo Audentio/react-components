@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "CoenraadS.bracket-pair-colorizer",
+        "christian-kohler.path-intellisense",
+        "audentio.audentio-javascript-snippets",
+        "DigitalBrainstem.javascript-ejs-support",
+        "clinyong.vscode-css-modules",
+        "mrmlnc.vscode-scss",
+        "dbaeumer.vscode-eslint",
+        "shinnn.stylelint",
+        "aaron-bond.better-comments",
+        "esbenp.prettier-vscode",
+        "msjsdiag.debugger-for-chrome",
+        "fabiospampinato.vscode-projects-plus",
+        "eamodio.gitlens"
+    ]
+}
