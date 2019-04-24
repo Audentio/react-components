@@ -13,7 +13,7 @@
     }
 
     &__narrow {
-        max-width: 700px;
+        max-width: $contentWidth_narrow;
     }
 
     @include breakpoint($screen-lg) {
