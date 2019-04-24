@@ -1,3 +1,13 @@
+## Usage
+
+`yarn add @audentio/components`
+
+```jsx
+import { Button } from '@audentio/components/Button';
+
+const App = () => <Button>Hello world</Button>;
+```
+
 ## Setup (ignore if using kinetic):
 
 #### 1. Allow audentio scoped components to be transpiled
