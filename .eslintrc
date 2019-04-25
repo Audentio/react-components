@@ -1,6 +1,3 @@
 {
-    "extends": ["@audentio/standard", "prettier", "prettier/react"],
-    "rules": {
-        "react/destructuring-assignment": "off"
-    }
+    "extends": ["@audentio/standard", "prettier", "prettier/react"]
 }
