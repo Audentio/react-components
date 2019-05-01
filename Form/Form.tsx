@@ -138,7 +138,7 @@ export class Form extends Component<FormProps, FormState> {
 
                 return React.cloneElement(child, {
                     onChange,
-                    novalidate: true, // disable native validation
+                    noValidate: true, // disable native validation
                     errors: !this.props.disabled && !child.props.disabled && errors,
                     isFetching: this.props.isFetching || child.props.isFetching,
 
