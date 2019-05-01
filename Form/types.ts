@@ -1,3 +1,5 @@
+import { Schema } from 'yup';
+
 export interface FormValue {
     [key: string]: any;
 }
@@ -104,4 +106,32 @@ export interface FormState {
     touched: Object;
     touchedAll: boolean;
     isValid: boolean;
+}
+
+export interface FormFieldProps {
+    name: string;
+    disabled?: boolean;
+
+    /**
+     *
+     * Validation schema
+     * not used directly by input. <Form> uses it for validation
+     */
+    schema?: Schema<any>;
+
+    /**
+     * Validation errors
+     * array of error messages
+     */
+    errors?: Array<string>;
+
+    onChange?: (d: { name: string; value: any }) => void;
+    onBlur?: Function;
+    triggerFormUpdate?: Function;
+
+    /**
+     * Skip value in Form's onSubmit prop
+     * this lets you use create inputs solely for dynamic fields
+     */
+    skipOnSubmit?: boolean;
 }
