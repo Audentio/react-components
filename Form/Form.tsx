@@ -1,7 +1,7 @@
 import { passProps } from '@audentio/utils/src/passProps';
 import { throttle } from '@audentio/utils/src/throttle';
 import React, { Component } from 'react';
-import { object, Schema } from 'yup';
+import { object } from 'yup';
 import { FormProps, FormState, FormValue } from './types';
 
 const initialFormState: FormState = {
@@ -25,10 +25,7 @@ export class Form extends Component<FormProps, FormState> {
         // if value is passed we need to update local state to use it
         if (nextProps.value) {
             return {
-                value:
-                    nextProps.handleDots && Object.keys(prevState.value).length === 0
-                        ? convertToDots(nextProps.value)
-                        : nextProps.value,
+                value: nextProps.value,
             };
         }
 
@@ -38,21 +35,19 @@ export class Form extends Component<FormProps, FormState> {
     state = initialFormState;
 
     componentDidMount() {
-        const { initialValue, onChange, handleDots } = this.props;
-
-        const value = handleDots ? convertToDots(initialValue) : initialValue;
+        const { initialValue, onChange } = this.props;
 
         // update form value to use initialValue
-        if (value && Object.keys(value).length > 0) {
+        if (initialValue && Object.keys(initialValue).length > 0) {
             if (onChange) {
                 onChange({
-                    value,
+                    value: initialValue,
                     isUserInput: false,
                 });
             } else {
                 // eslint-disable-next-line
                 this.setState({
-                    value,
+                    value: initialValue,
                 });
             }
         }
@@ -63,7 +58,7 @@ export class Form extends Component<FormProps, FormState> {
     }
 
     // validator object shape
-    validator: { [name: string]: Schema<any> } = {};
+    validator: { [name: string]: import('yup').Schema<any> } = {};
 
     __formRef: React.RefObject<HTMLFormElement> = React.createRef();
 
@@ -185,7 +180,6 @@ export class Form extends Component<FormProps, FormState> {
      */
     getSubmitValue(__formValue?: FormValue, __children?: React.ReactChild) {
         const children = __children === undefined ? this.props.children : __children;
-        const rootCall = typeof __formValue === 'undefined'; // calling without params so assume root level
         let formValue = __formValue || {};
 
         React.Children.forEach(children, (child: any) => {
@@ -226,10 +220,6 @@ export class Form extends Component<FormProps, FormState> {
                 }
             });
         });
-
-        if (rootCall && this.props.handleDots) {
-            return convertFromDots(formValue);
-        }
 
         return formValue;
     }
