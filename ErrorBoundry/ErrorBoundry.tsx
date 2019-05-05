@@ -1,4 +1,4 @@
-import { Sentry } from '@audentio/utils/src/Sentry';
+import * as Sentry from '@sentry/minimal';
 import React, { Component } from 'react';
 
 interface ErrorBoundryProps {

@@ -144,6 +144,37 @@
   resolved "https://registry.npmjs.org/@mdi/font/-/font-3.6.95.tgz#0bbde766ca2d94cfa0e469f25523b23d3112bdd3"
   integrity sha512-wUbkF/RRCIh51TPzAL9qUeRSUFla9I3x1nGq62HkfWzIebRHbDY5HPaYCQuZO7398dWaLHTu4BwnBA58YbhfEA==
 
+"@sentry/hub@5.1.2":
+  version "5.1.2"
+  resolved "https://registry.npmjs.org/@sentry/hub/-/hub-5.1.2.tgz#ffdb47cd35fbf8ace66d5c251754bea8ee5f901d"
+  integrity sha512-5UNyxpvb1Bl+iZ6MBZazoKZ8jkAX88/Z7smlK+nvVxSKvKbmAptIEHYm9xeRkBNg7mj4OFoQvcUgbapwAbbcZw==
+  dependencies:
+    "@sentry/types" "5.1.0"
+    "@sentry/utils" "5.1.2"
+    tslib "^1.9.3"
+
+"@sentry/minimal@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.npmjs.org/@sentry/minimal/-/minimal-5.1.2.tgz#b2bf9c864f65f8c93fc7203e41e19208ce065411"
+  integrity sha512-StDUZA/OiXCjcRif6D51+iY97Tkqnyy+RHv5Udi+l4eKhMBpZ7nagMOXADA7eQ+XvWj/4mGbeVORPoOi/LGqTA==
+  dependencies:
+    "@sentry/hub" "5.1.2"
+    "@sentry/types" "5.1.0"
+    tslib "^1.9.3"
+
+"@sentry/types@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/@sentry/types/-/types-5.1.0.tgz#2acda336c73c996b42ca03887679599c78751f10"
+  integrity sha512-Uo5Fla1RjCfmliQWsV4ehZ1Q4z4taMC66ZGrqrUWx7FyQsaps+TJfQE5QiTIs+jWD6CbgVRf/N+pNMmpIK8JVA==
+
+"@sentry/utils@5.1.2":
+  version "5.1.2"
+  resolved "https://registry.npmjs.org/@sentry/utils/-/utils-5.1.2.tgz#f2b0ba7b97d01baafc705eed8f2b31005cb01e36"
+  integrity sha512-0KYr75d7SR28lx+s2ZbLBjdgKwVeJLxoX8l6fBxYGXkDiMaWfi4f6JOf4Wd96Mh4ZvdzVLLhOGkGak/HYKa7Yw==
+  dependencies:
+    "@sentry/types" "5.1.0"
+    tslib "^1.9.3"
+
 "@types/node@*":
   version "11.13.7"
   resolved "https://registry.npmjs.org/@types/node/-/node-11.13.7.tgz#85dbb71c510442d00c0631f99dae957ce44fd104"
@@ -1919,7 +1950,7 @@ trim-right@^1.0.1:
   resolved "https://registry.npmjs.org/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-tslib@^1.9.0:
+tslib@^1.9.0, tslib@^1.9.3:
   version "1.9.3"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==

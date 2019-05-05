@@ -8,6 +8,7 @@
     "@atlaskit/layer-manager": "^6.0.3",
     "@audentio/utils": "^4.0.0",
     "@mdi/font": "^3.6.95",
+    "@sentry/minimal": "^5.1.2",
     "date-fns": "^2.0.0-alpha.27",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

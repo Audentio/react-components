@@ -1,6 +1,6 @@
 import { isExternalUrl } from '@audentio/utils/src/isExternalUrl';
 import { passProps } from '@audentio/utils/src/passProps';
-import { Sentry } from '@audentio/utils/src/Sentry';
+import * as Sentry from '@sentry/minimal';
 import React, { Component } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 

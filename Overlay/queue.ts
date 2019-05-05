@@ -1,4 +1,4 @@
-import { Sentry } from '@audentio/utils/src/Sentry';
+import * as Sentry from '@sentry/minimal';
 
 // Overlay queue
 // decided to keep it super simple for now
