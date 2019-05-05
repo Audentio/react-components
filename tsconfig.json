@@ -11,10 +11,7 @@
         "sourceMap": true,
         "noUnusedLocals": true,
         "allowSyntheticDefaultImports": true,
-        "noErrorTruncation": true,
-        "paths": {
-            "*": ["*"]
-        }
+        "noErrorTruncation": true
     },
     "typeAcquisition": {
         "enable": true

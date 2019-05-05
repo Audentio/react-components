@@ -22,5 +22,6 @@
     "search.usePCRE2": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
-    }
+    },
+    "typescript.preferences.importModuleSpecifier": "relative"
 }
