@@ -297,8 +297,11 @@ export class Form extends Component<FormProps, FormState> {
         if (onReset) onReset(e);
 
         if (!e.defaultPrevented) {
-            onChange({ value: initialValue || {}, isUserInput: true });
-            this.setState(initialFormState);
+            if (onChange) {
+                onChange({ value: initialValue || {}, isUserInput: true });
+            } else {
+                this.setState(initialFormState);
+            }
         }
     };
 
