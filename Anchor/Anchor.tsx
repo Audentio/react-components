@@ -59,7 +59,7 @@ export class Anchor extends Component<AnchorProps> {
         // Internal path
         // react-router Link
         return (
-            <NavLink innerRef={innerRef} to={href} {...props}>
+            <NavLink innerRef={innerRef} to={href} {...props} {...passProps(props)}>
                 {children}
             </NavLink>
         );

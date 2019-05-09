@@ -26,13 +26,11 @@ export interface IconProps extends Omit<React.HTMLProps<HTMLElement>, 'size'> {
     className?: string;
     style?: { [key: string]: any };
 
-    innerRef?: (e: HTMLElement) => void;
-
     onClick?: (e: any) => void;
 }
 
-export function Icon(props: IconProps) {
-    const { size, children, name, className, innerRef, fallback, onClick, ...rest } = props;
+export const Icon = (props: IconProps) => {
+    const { size, children, name, className, fallback, onClick, ...rest } = props;
 
     const inlineStyle = { ...props.style };
     if (size) inlineStyle.fontSize = size;
@@ -42,8 +40,8 @@ export function Icon(props: IconProps) {
     }
 
     return (
-        <i {...rest} ref={innerRef} className={classy(style.icon, className)} style={inlineStyle} onClick={onClick}>
+        <i aria-hidden="true" className={classy(style.icon, className)} style={inlineStyle} onClick={onClick} {...rest}>
             {iconmap[name] || iconmap[fallback]}
         </i>
     );
-}
+};
