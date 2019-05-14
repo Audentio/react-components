@@ -31,6 +31,10 @@ export class Form extends Component<FormProps, FormState> {
         return {};
     }
 
+    static defaultProps = {
+        buttonTypeName: 'Button',
+    };
+
     state = initialFormState;
 
     componentDidMount() {
@@ -61,7 +65,7 @@ export class Form extends Component<FormProps, FormState> {
 
     __formRef: React.RefObject<HTMLFormElement> = React.createRef();
 
-    formUpdateTimer: NodeJS.Timer = null;
+    formUpdateTimer?: NodeJS.Timer = null;
 
     formID: string = Math.random()
         .toString(32)
@@ -151,8 +155,11 @@ export class Form extends Component<FormProps, FormState> {
             }
 
             // disable submit button if form value is invalid
-            // @ts-ignore
-            if (child.type && child.type.name === this.props.buttonTypeName && child.props.type === 'submit') {
+            if (
+                child.type &&
+                (child.type as any).displayName === this.props.buttonTypeName &&
+                child.props.type === 'submit'
+            ) {
                 return React.cloneElement(child, {
                     disabled:
                         (!this.state.isValid && this.state.touchedAll) || this.props.disabled || child.props.disabled,
