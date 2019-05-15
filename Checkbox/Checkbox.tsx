@@ -111,7 +111,7 @@ export class Checkbox extends Component<CheckboxProps> {
                     ref={this.saveRef}
                 >
                     <Text dynamicBg={color}>
-                        <Icon>check</Icon>
+                        <Icon name="check" />
                     </Text>
                 </div>
 
