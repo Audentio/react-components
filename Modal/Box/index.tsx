@@ -1,7 +1,7 @@
-import { FocusLock } from '@atlaskit/layer-manager';
 import { classy } from '@audentio/utils/src/classy';
 import { keymap } from '@audentio/utils/src/keymap';
 import React, { Component } from 'react';
+import FocusLock from 'react-focus-lock';
 import { Backdrop } from '../../Backdrop';
 import { Icon } from '../../Icon';
 import { ScrollLock } from '../../ScrollLock';
