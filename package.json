@@ -4,6 +4,9 @@
   "description": "Common react components",
   "author": "Audentio",
   "license": "ISC",
+  "scripts": {
+    "release": "release-it"
+  },
   "dependencies": {
     "@audentio/utils": "^4.0.0",
     "@mdi/font": "^3.6.95",
@@ -20,6 +23,7 @@
     "enzyme": "^3.9.0",
     "eslint-config-prettier": "^4.1.0",
     "lolex": "^4.0.1",
+    "release-it": "^12.2.0",
     "stylelint-config-audentio": "^1.0.1",
     "stylelint-config-standard": "^18.3.0"
   }
