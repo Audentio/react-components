@@ -4,6 +4,10 @@
   "description": "Common react components",
   "author": "Audentio",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Audentio/react-components.git"
+  },
   "scripts": {
     "release": "release-it"
   },
@@ -27,5 +31,8 @@
     "release-it": "^12.2.0",
     "stylelint-config-audentio": "^1.0.1",
     "stylelint-config-standard": "^18.3.0"
-  }
+  },
+  "eslintIgnore": [
+    "node_modules/*"
+  ]
 }
