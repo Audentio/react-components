@@ -2298,6 +2298,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+mdi-react@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.npmjs.org/mdi-react/-/mdi-react-5.4.0.tgz#4c2f2f9970aa603cc9eb78d58a02aa43d7f63b59"
+  integrity sha512-Y4eUHbbEiiQC8og6ofMM7ukUIiD+NnIQRpJHj2aVzle918aUCJh4Du9sjXw+yJ+wi8Nh7TdNvFptJD3WIdlbNw==
+
 merge2@^1.2.3:
   version "1.2.3"
   resolved "https://registry.npmjs.org/merge2/-/merge2-1.2.3.tgz#7ee99dbd69bb6481689253f018488a1b902b0ed5"
