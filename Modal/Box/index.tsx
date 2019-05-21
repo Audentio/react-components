@@ -39,9 +39,7 @@ export default class ModalBox extends Component<any> {
             <FocusLock autoFocus>
                 <div className={classy(style.wrapper, style.visible, containerClass)} style={{ opacity }} {...rest}>
                     {overlay && (
-                        <Backdrop onClick={onClose} className={style.backdrop}>
-                            {canClose && <CloseIcon className={style.backdropDismissIcon} size={14} />}
-                        </Backdrop>
+                        <Backdrop onClick={onClose} className={style.backdrop} />
                     )}
 
                     <div
