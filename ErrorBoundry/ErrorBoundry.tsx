@@ -20,6 +20,10 @@ export class ErrorBoundry extends Component<ErrorBoundryProps> {
     componentDidCatch(error) {
         Sentry.captureException(error);
 
+        if (__DEV__) {
+            console.error(error);
+        }
+
         this.setState({
             error,
         });
