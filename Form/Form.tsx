@@ -148,7 +148,7 @@ export class Form extends Component<FormProps, FormState> {
                     // reads values from all inputs and triggers onChange on form
                     triggerFormUpdate: this.updateForm,
 
-                    id: `${this.formID}__${child.props.name}`,
+                    id: __BROWSER__ ? `${this.formID}__${child.props.name}` : undefined,
 
                     value,
                 });
