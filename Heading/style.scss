@@ -10,11 +10,11 @@
         font-size: 3.2rem;
         margin-bottom: 0.4em;
 
-        @include breakpoint(small) {
+        @include breakpoint($screen-sm) {
             font-size: 4rem;
         }
 
-        @include breakpoint(medium) {
+        @include breakpoint($screen-md) {
             font-size: 4.8rem;
         }
 
@@ -24,44 +24,40 @@
     }
 
     &--h2 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         margin-bottom: 0.5em;
 
-        @include breakpoint(small) {
+        @include breakpoint($screen-sm) {
             font-size: 3.2rem;
         }
 
-        @include breakpoint(medium) {
+        @include breakpoint($screen-md) {
             font-size: 3.6rem;
         }
     }
 
     &--h3 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
 
-        @include breakpoint(small) {
+        @include breakpoint($screen-sm) {
             font-size: 2.7rem;
         }
 
-        @include breakpoint(medium) {
+        @include breakpoint($screen-md) {
             font-size: 3rem;
         }
     }
 
     &--h4 {
-        font-size: 2.2rem;
+        font-size: 2rem;
 
-        @include breakpoint(medium) {
-            font-size: 2.6rem;
+        @include breakpoint($screen-md) {
+            font-size: 2.4rem;
         }
     }
 
     &--h5 {
         font-size: 1.8rem;
-
-        @include breakpoint(medium) {
-            font-size: 1.8rem;
-        }
     }
 
     &--h6 {
