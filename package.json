@@ -12,9 +12,9 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@audentio/utils": "^4.0.0",
-    "@mdi/font": "^3.6.95",
-    "@sentry/minimal": "^5.1.2",
+    "@audentio/utils": "^4.1.2",
+    "@mdi/font": "^3.7.95",
+    "@sentry/minimal": "^5.5.0",
     "date-fns": "^2.0.0-alpha.27",
     "mdi-react": "^5.4.0",
     "react": "^16.8.6",
@@ -24,12 +24,12 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "@audentio/eslint-config-standard": "^2.0.1",
-    "enzyme": "^3.9.0",
-    "eslint-config-prettier": "^4.1.0",
-    "lolex": "^4.0.1",
-    "release-it": "^12.2.0",
-    "stylelint-config-audentio": "^1.0.1",
+    "@audentio/eslint-config-standard": "^2.0.2",
+    "enzyme": "^3.10.0",
+    "eslint-config-prettier": "^6.0.0",
+    "lolex": "^4.1.0",
+    "release-it": "^12.3.3",
+    "stylelint-config-audentio": "^1.0.2",
     "stylelint-config-standard": "^18.3.0"
   },
   "eslintIgnore": [
