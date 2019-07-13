@@ -9,7 +9,9 @@
     "url": "https://github.com/Audentio/react-components.git"
   },
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@audentio/utils": "^4.0.0",
@@ -21,7 +23,8 @@
     "react-dom": "^16.8.6",
     "react-focus-lock": "^1.19.1",
     "slate": "^0.45.0",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@audentio/eslint-config-standard": "^2.0.1",
@@ -34,5 +37,6 @@
   },
   "eslintIgnore": [
     "node_modules/*"
-  ]
+  ],
+  "snyk": true
 }
