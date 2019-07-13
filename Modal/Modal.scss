@@ -65,8 +65,12 @@
     top: $gutter;
     color: $color-faintText;
     cursor: pointer;
+    transform: rotate(0deg);
+    transition: 500ms;
 
     &:hover {
-        color: $color-contentText;
+        color: $color-emphasisText;
+        transform: rotate(90deg);
+        transition: 500ms;
     }
 }
