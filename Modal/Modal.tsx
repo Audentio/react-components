@@ -32,6 +32,7 @@ interface ModalProps {
     trigger?: any;
 
     containerClass?: string;
+    noOverlay?: boolean;
 }
 
 interface ModalState {
@@ -46,29 +47,25 @@ interface LightboxPortalProps {
     children: React.ReactNode;
     className?: string;
     containerClass?: string;
+    noOverlay?: boolean;
 }
 
 class LightboxPortal extends Component<LightboxPortalProps> {
     render() {
-        const { onClose, mountNode, className, visible, canClose, children, containerClass } = this.props;
+        const { noOverlay, onClose, mountNode, className, visible, canClose, children, containerClass } = this.props;
 
         if (!visible) return null;
 
-        return (
-            <Overlay>
-                {ReactDOM.createPortal(
-                    <ModalBox
-                        containerClass={containerClass}
-                        className={className}
-                        canClose={canClose}
-                        onClose={onClose}
-                    >
-                        {children}
-                    </ModalBox>,
-                    mountNode
-                )}
-            </Overlay>
+        const portal = ReactDOM.createPortal(
+            <ModalBox containerClass={containerClass} className={className} canClose={canClose} onClose={onClose}>
+                {children}
+            </ModalBox>,
+            mountNode
         );
+
+        if (noOverlay) return portal;
+
+        return <Overlay>{portal}</Overlay>;
     }
 }
 
@@ -117,7 +114,7 @@ export class Modal extends Component<ModalProps, ModalState> {
     };
 
     render() {
-        const { visible, trigger, className, children, onClose, containerClass } = this.props;
+        const { visible, trigger, className, children, onClose, containerClass, noOverlay } = this.props;
 
         // use visible prop if it's a boolean
         // otherwise use internal state
@@ -139,6 +136,7 @@ export class Modal extends Component<ModalProps, ModalState> {
                         mountNode={this.getMountNode()}
                         visible={isVisible}
                         containerClass={containerClass}
+                        noOverlay={noOverlay}
                     >
                         {children}
                     </LightboxPortal>
