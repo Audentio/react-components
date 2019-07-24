@@ -14,21 +14,21 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "@audentio/utils": "^4.1.2",
-    "@mdi/font": "^3.7.95",
+    "@audentio/utils": "^4.2.1",
+    "@mdi/font": "^3.8.95",
     "@sentry/minimal": "^5.5.0",
-    "date-fns": "^2.0.0-alpha.27",
+    "date-fns": "^1.30.1",
     "element-resize-detector": "^1.1.15",
-    "mdi-react": "^5.4.0",
+    "mdi-react": "^5.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-focus-lock": "^1.19.1",
     "slate": "^0.45.0",
-    "snyk": "^1.189.0",
+    "snyk": "^1.198.0",
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "@audentio/eslint-config-standard": "^2.0.2",
+    "@audentio/eslint-config-standard": "^2.2.1",
     "enzyme": "^3.10.0",
     "eslint-config-prettier": "^6.0.0",
     "lolex": "^4.1.0",
