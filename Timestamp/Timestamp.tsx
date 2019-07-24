@@ -1,6 +1,9 @@
-import { cookies } from '@audentio/utils/src/cookies';
-import { format as formatTime, formatDistance, formatRelative } from 'date-fns';
+import formatTime from 'date-fns/format';
+import formatDistance from 'date-fns/formatDistance';
+import formatRelative from 'date-fns/formatRelative';
 import React, { Component } from 'react';
+import { handleTimezone } from './handleTimezone';
+import { parseTimestring } from './parseTimestring';
 
 export interface TimestampProps {
     className?: string;
@@ -46,44 +49,6 @@ export interface TimestampProps {
     noWrap?: boolean;
 }
 
-let formattedOffset;
-function getFormattedOffset() {
-    if (!formattedOffset) {
-        const d = new Date();
-        const hours = Math.floor(-d.getTimezoneOffset() / 60);
-        const minutes = -d.getTimezoneOffset() % 60;
-
-        formattedOffset = `${hours < 0 ? '-' : '+'}${hours}:${minutes}`;
-    }
-
-    return formattedOffset;
-}
-
-let savedTimezone;
-let timezone_read = false;
-
-function handleTimezone(formattedTime) {
-    if (timezone_read) {
-        savedTimezone = cookies.getItem('timezone');
-        timezone_read = true;
-    }
-
-    let userTimezone;
-
-    try {
-        userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    } catch (e) {
-        // no Intl :(
-    }
-
-    if (savedTimezone !== userTimezone) {
-        // TODO: @tushar fix
-        // return `${formattedTime} (UTC ${getFormattedOffset()})`;
-    }
-
-    return formattedTime;
-}
-
 type FormatOptions = {
     weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
     additionalDigits?: 0 | 1 | 2;
@@ -107,7 +72,7 @@ export class Timestamp extends Component<TimestampProps> {
     _timer: number;
 
     static format = (date: string | Date | number, format: string, options?: FormatOptions) =>
-        handleTimezone(formatTime(date, format, options));
+        handleTimezone(formatTime(parseTimestring(date), format, options));
 
     static defaultProps = {
         format: 'MMMM Do YYYY, h:mm a',
@@ -150,23 +115,27 @@ export class Timestamp extends Component<TimestampProps> {
         if (output) {
             switch (output) {
                 case 'calendar':
-                    return handleTimezone(formatRelative(time, baseDate, formatOptions));
+                    return handleTimezone(formatRelative(parseTimestring(time), baseDate, formatOptions));
                 case 'relative':
-                    return formatDistance(time, baseDate, Object.assign({ addSuffix: true }, formatOptions));
+                    return formatDistance(
+                        parseTimestring(time),
+                        baseDate,
+                        Object.assign({ addSuffix: true }, formatOptions)
+                    );
 
                 // absolute by default
                 default:
-                    return handleTimezone(formatTime(time, 'MMMM Do YYYY, h:mm a'));
+                    return handleTimezone(formatTime(parseTimestring(time), 'MMMM Do YYYY, h:mm a'));
             }
         }
 
-        return handleTimezone(formatTime(time, format, formatOptions));
+        return handleTimezone(formatTime(parseTimestring(time), format, formatOptions));
     }
 
     render() {
         const { children, className, noWrap } = this.props;
 
-        const time_abs = formatTime(children, 'MMMM Do YYYY, h:mm a');
+        const time_abs = formatTime(parseTimestring(children), 'MMMM Do YYYY, h:mm a');
 
         if (noWrap) {
             return this.format(children);
