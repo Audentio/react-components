@@ -66,7 +66,7 @@ type FormatOptions = {
  * <Timestamp output="relative" liveUpdate>{new Date('Mon May 03 2018 05:41:46')}</Timestamp>
  *
  * @example Render timestamp with custom format
- * <Timestamp format="hh:mm DD/MM/YYYY">Mon May 03 2018 05:41:46</Timestamp>
+ * <Timestamp format="hh:mm dd/MM/yyyy">Mon May 03 2018 05:41:46</Timestamp>
  */
 export class Timestamp extends Component<TimestampProps> {
     _timer: number;
@@ -75,7 +75,7 @@ export class Timestamp extends Component<TimestampProps> {
         handleTimezone(formatTime(parseTimestring(date), format, options));
 
     static defaultProps = {
-        format: 'MMMM Do YYYY, h:mm a',
+        format: 'MMMM Do yyyy, h:mm a',
         formatOptions: {},
     };
 
@@ -125,7 +125,7 @@ export class Timestamp extends Component<TimestampProps> {
 
                 // absolute by default
                 default:
-                    return handleTimezone(formatTime(parseTimestring(time), 'MMMM Do YYYY, h:mm a'));
+                    return handleTimezone(formatTime(parseTimestring(time), 'MMMM Do yyyy, h:mm a'));
             }
         }
 
@@ -135,7 +135,7 @@ export class Timestamp extends Component<TimestampProps> {
     render() {
         const { children, className, noWrap } = this.props;
 
-        const time_abs = formatTime(parseTimestring(children), 'MMMM Do YYYY, h:mm a');
+        const time_abs = formatTime(parseTimestring(children), 'MMMM Do yyyy, h:mm a');
 
         if (noWrap) {
             return this.format(children);
