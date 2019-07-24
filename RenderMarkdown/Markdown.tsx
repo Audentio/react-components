@@ -1,5 +1,5 @@
-import { classy } from '@audentio/utils/classy';
-import { Sentry } from '@audentio/utils/sentry';
+import { classy } from '@audentio/utils/src/classy';
+import { Sentry } from '@audentio/utils/src/Sentry';
 import React, { Component, Fragment } from 'react';
 import style from './Markdown.scss';
 import parser from './parser';
