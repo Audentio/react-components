@@ -4,8 +4,7 @@ import * as Sentry from '@sentry/minimal';
 // decided to keep it super simple for now
 // if we ever need queue priority we can probably rewrite keeping the same surface API
 // -------------
-let instances = [];
-let keyedInstances = {};
+const keyedInstances = {};
 
 const getKey = key => {
     return key || 'default_key';
@@ -44,6 +43,10 @@ export function removeFromQueue(instance, keyBase = null) {
 // return true if there's nothing in queue or if given entry is first in queue
 export function isNextInQueue(instance, keyBase = null) {
     const key = getKey(keyBase);
+
+    if (typeof (keyedInstances[key] === 'undefined')) {
+        return true;
+    }
 
     return keyedInstances[key].length === 0 || keyedInstances[key][0].instance === instance;
 }
