@@ -65,7 +65,7 @@ class LightboxPortal extends Component<LightboxPortalProps> {
 
         if (noOverlay) return portal;
 
-        return <Overlay>{portal}</Overlay>;
+        return <Overlay type="modal">{portal}</Overlay>;
     }
 }
 
