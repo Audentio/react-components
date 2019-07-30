@@ -18,7 +18,7 @@ export interface TimestampProps {
      * Custom date format
      * https://date-fns.org/v2.0.0-alpha.6/docs/format
      *
-     * @example format="MMMM Do, yyyy" // (May 7th, 2018)
+     * @example format="MMMM do, yyyy" // (May 7th, 2018)
      */
     format?: string;
 
@@ -75,7 +75,7 @@ export class Timestamp extends Component<TimestampProps> {
         handleTimezone(formatTime(parseTimestring(date), format, options));
 
     static defaultProps = {
-        format: 'MMMM Do yyyy, h:mm a',
+        format: 'MMMM do yyyy, h:mm a',
         formatOptions: {},
     };
 
@@ -125,7 +125,7 @@ export class Timestamp extends Component<TimestampProps> {
 
                 // absolute by default
                 default:
-                    return handleTimezone(formatTime(parseTimestring(time), 'MMMM Do yyyy, h:mm a'));
+                    return handleTimezone(formatTime(parseTimestring(time), 'MMMM do yyyy, h:mm a'));
             }
         }
 
@@ -135,7 +135,7 @@ export class Timestamp extends Component<TimestampProps> {
     render() {
         const { children, className, noWrap } = this.props;
 
-        const time_abs = formatTime(parseTimestring(children), 'MMMM Do yyyy, h:mm a');
+        const time_abs = formatTime(parseTimestring(children), 'MMMM do yyyy, h:mm a');
 
         if (noWrap) {
             return this.format(children);
