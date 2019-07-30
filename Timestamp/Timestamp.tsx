@@ -18,7 +18,7 @@ export interface TimestampProps {
      * Custom date format
      * https://date-fns.org/v2.0.0-alpha.6/docs/format
      *
-     * @example format="MMMM Do, YYYY" // (May 7th, 2018)
+     * @example format="MMMM Do, yyyy" // (May 7th, 2018)
      */
     format?: string;
 
