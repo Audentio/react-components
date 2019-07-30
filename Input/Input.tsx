@@ -183,9 +183,9 @@ export class Input extends Component<InputProps, State> {
 
         let inputValue = value;
         if (type === 'datetime-local') {
-            inputValue = Timestamp.format(value, 'YYYY-MM-DDTHH:mm');
+            inputValue = Timestamp.format(value, 'yyyy-MM-DDTHH:mm');
         } else if (type === 'date') {
-            inputValue = Timestamp.format(value, 'YYYY-MM-DD');
+            inputValue = Timestamp.format(value, 'yyyy-MM-DD');
         }
 
         return (
