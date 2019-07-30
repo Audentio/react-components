@@ -1,3 +1,4 @@
+import { Sentry } from '@audentio/utils/src/Sentry';
 import formatTime from 'date-fns/format';
 import formatDistance from 'date-fns/formatDistance';
 import formatRelative from 'date-fns/formatRelative';
@@ -108,34 +109,46 @@ export class Timestamp extends Component<TimestampProps> {
     }
 
     format(time: string | Date): string {
-        const { output, format, formatOptions } = this.props;
+        try {
+            const { output, format, formatOptions } = this.props;
 
-        const baseDate = new Date();
+            const baseDate = new Date();
 
-        if (output) {
-            switch (output) {
-                case 'calendar':
-                    return handleTimezone(formatRelative(parseTimestring(time), baseDate, formatOptions));
-                case 'relative':
-                    return formatDistance(
-                        parseTimestring(time),
-                        baseDate,
-                        Object.assign({ addSuffix: true }, formatOptions)
-                    );
+            if (output) {
+                switch (output) {
+                    case 'calendar':
+                        return handleTimezone(formatRelative(parseTimestring(time), baseDate, formatOptions));
+                    case 'relative':
+                        return formatDistance(
+                            parseTimestring(time),
+                            baseDate,
+                            Object.assign({ addSuffix: true }, formatOptions)
+                        );
 
-                // absolute by default
-                default:
-                    return handleTimezone(formatTime(parseTimestring(time), 'MMMM do yyyy, h:mm a'));
+                    // absolute by default
+                    default:
+                        return handleTimezone(formatTime(parseTimestring(time), 'MMMM do yyyy, h:mm a'));
+                }
             }
-        }
 
-        return handleTimezone(formatTime(parseTimestring(time), format, formatOptions));
+            return handleTimezone(formatTime(parseTimestring(time), format, formatOptions));
+        } catch (e) {
+            Sentry.captureException(e);
+
+            return 'Invalid Date';
+        }
     }
 
     render() {
         const { children, className, noWrap } = this.props;
 
-        const time_abs = formatTime(parseTimestring(children), 'MMMM do yyyy, h:mm a');
+        let time_abs;
+
+        try {
+            time_abs = formatTime(parseTimestring(children), 'MMMM do yyyy, h:mm a');
+        } catch (e) {
+            time_abs = 'Invalid Date';
+        }
 
         if (noWrap) {
             return this.format(children);
