@@ -6,7 +6,7 @@ interface OverlayProps {
 }
 
 export class Overlay extends Component<OverlayProps> {
-    componentDidMount() {
+    componentWillMount() {
         addToQueue(this, this.props.type);
     }
 
