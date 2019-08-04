@@ -72,8 +72,12 @@ type FormatOptions = {
 export class Timestamp extends Component<TimestampProps> {
     _timer: number;
 
-    static format = (date: string | Date | number, format: string, options?: FormatOptions) =>
-        handleTimezone(formatTime(parseTimestring(date), format, options));
+    static format = (date: string | Date | number, format: string, options?: FormatOptions) => {
+        if (!date) {
+            return null;
+        }
+        return handleTimezone(formatTime(parseTimestring(date), format, options));
+    };
 
     static defaultProps = {
         format: 'MMMM do yyyy, h:mm a',
