@@ -113,6 +113,10 @@ export class Timestamp extends Component<TimestampProps> {
     }
 
     format(time: string | Date): string {
+        if (!time) {
+            return null;
+        }
+
         try {
             const { output, format, formatOptions } = this.props;
 
