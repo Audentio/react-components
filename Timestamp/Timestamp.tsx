@@ -73,7 +73,13 @@ export class Timestamp extends Component<TimestampProps> {
     _timer: number;
 
     static format = (date: string | Date | number, format: string, options?: FormatOptions) =>
-        handleTimezone(formatTime(parseTimestring(date), format, options));
+        handleTimezone(
+            formatTime(parseTimestring(date), format, {
+                useAdditionalDayOfYearTokens: true,
+                useAdditionalWeekYearTokens: true,
+                ...options,
+            })
+        );
 
     static defaultProps = {
         format: 'MMMM do yyyy, h:mm a',
@@ -127,11 +133,23 @@ export class Timestamp extends Component<TimestampProps> {
 
                     // absolute by default
                     default:
-                        return handleTimezone(formatTime(parseTimestring(time), 'MMMM do yyyy, h:mm a'));
+                        return handleTimezone(
+                            formatTime(parseTimestring(time), 'MMMM do yyyy, h:mm a', {
+                                useAdditionalDayOfYearTokens: true,
+                                useAdditionalWeekYearTokens: true,
+                                ...formatOptions,
+                            })
+                        );
                 }
             }
 
-            return handleTimezone(formatTime(parseTimestring(time), format, formatOptions));
+            return handleTimezone(
+                formatTime(parseTimestring(time), format, {
+                    useAdditionalDayOfYearTokens: true,
+                    useAdditionalWeekYearTokens: true,
+                    ...formatOptions,
+                })
+            );
         } catch (e) {
             Sentry.captureException(e);
 
@@ -140,12 +158,16 @@ export class Timestamp extends Component<TimestampProps> {
     }
 
     render() {
-        const { children, className, noWrap } = this.props;
+        const { children, className, noWrap, formatOptions } = this.props;
 
         let time_abs;
 
         try {
-            time_abs = formatTime(parseTimestring(children), 'MMMM do yyyy, h:mm a');
+            time_abs = formatTime(parseTimestring(children), 'MMMM do yyyy, h:mm a', {
+                useAdditionalDayOfYearTokens: true,
+                useAdditionalWeekYearTokens: true,
+                ...formatOptions,
+            });
         } catch (e) {
             time_abs = 'Invalid Date';
         }
