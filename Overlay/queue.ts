@@ -44,7 +44,7 @@ export function removeFromQueue(instance, keyBase = null) {
 export function isNextInQueue(instance, keyBase = null) {
     const key = getKey(keyBase);
 
-    if (typeof (keyedInstances[key] === 'undefined')) {
+    if (typeof keyedInstances[key] === 'undefined') {
         return true;
     }
 
