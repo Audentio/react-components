@@ -35,7 +35,7 @@ export const Icon = React.forwardRef<HTMLElement, IconProps>((props, ref) => {
     const inlineStyle = { ...props.style };
     if (size) inlineStyle.fontSize = size;
 
-    if (!iconmap[name]) {
+    if (!iconmap[name] && __DEV__) {
         console.warn(name + ' missing in iconmap');
     }
 
