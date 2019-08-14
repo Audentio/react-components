@@ -47,7 +47,7 @@ export default class TablePagination extends Component<any> {
         );
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { cursor, onPageChange, loading } = this.props;
         const totalPages = cursor && Math.ceil(cursor.total / cursor.perPage);
 

@@ -26,7 +26,7 @@ export class ScrollLock extends Component<any> {
         window.scrollLockEnabled = false;
     }
 
-    render() {
+    public render(): React.ReactNode {
         return null;
     }
 }

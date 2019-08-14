@@ -51,7 +51,7 @@ interface LightboxPortalProps {
 }
 
 class LightboxPortal extends Component<LightboxPortalProps> {
-    render() {
+    public render(): React.ReactNode {
         const { noOverlay, onClose, mountNode, className, visible, canClose, children, containerClass } = this.props;
 
         if (!visible) return null;
@@ -113,7 +113,7 @@ export class Modal extends Component<ModalProps, ModalState> {
         if (onClose) onClose();
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { visible, trigger, className, children, onClose, containerClass, noOverlay } = this.props;
 
         // use visible prop if it's a boolean

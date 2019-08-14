@@ -29,7 +29,7 @@ export class Progress extends Component<Props> {
         };
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { kind, stroke, indeterminate, className, progressColor, trackColor } = this.props;
         const trackStyle: { [key: string]: any } = {};
 

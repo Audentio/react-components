@@ -88,7 +88,7 @@ export class Table extends Component<TableProps> {
         renderImmediately: true,
     };
 
-    render() {
+    public render(): React.ReactNode {
         const {
             rows,
             renderRow,

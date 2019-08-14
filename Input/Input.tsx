@@ -136,7 +136,7 @@ export class Input extends Component<InputProps, State> {
         }
     };
 
-    render() {
+    public render(): React.ReactNode {
         const {
             value,
             prefix = null,

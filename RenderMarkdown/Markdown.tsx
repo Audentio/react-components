@@ -57,7 +57,7 @@ export class RenderMarkdown extends Component<RenderMarkdownProps> {
         noWrap: false,
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { noWrap, children, className, disable, components, ...props } = this.props;
         if (!children) return null;
 

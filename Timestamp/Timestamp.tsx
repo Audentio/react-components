@@ -166,7 +166,7 @@ export class Timestamp extends Component<TimestampProps> {
         }
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, className, noWrap, formatOptions } = this.props;
 
         let time_abs;

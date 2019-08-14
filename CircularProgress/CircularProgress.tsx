@@ -25,7 +25,7 @@ export interface CircularProgressProps {
      * Progress value. Doesn't have to be a percentage
      * (pass `max` for non-percentage values)
      */
-    value: number;
+    value?: number;
 
     /**
      * Upper bound for your value. (used to calculate percentage)
@@ -103,7 +103,7 @@ export class CircularProgress extends Component<CircularProgressProps> {
         return { pathString, trailPathStyle, strokePathStyle };
     }
 
-    render() {
+    public render(): React.ReactNode {
         const {
             value,
             kind,

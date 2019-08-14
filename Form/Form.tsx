@@ -431,7 +431,7 @@ export class Form extends Component<FormProps, FormState> {
         return <pre>{JSON.stringify(this.state, null, 4)}</pre>;
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, debug, className, style: inlineStyle, autoComplete, formless = false, ...rest } = this.props;
         /** noValidate to disable native validation. we'll use our own thank you very much */
 

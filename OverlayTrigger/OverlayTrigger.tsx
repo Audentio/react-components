@@ -266,7 +266,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         });
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { overlay, trigger } = this.props;
         const { visible, containerStyle } = this.state;
 

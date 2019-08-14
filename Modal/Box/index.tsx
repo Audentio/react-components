@@ -32,7 +32,7 @@ export default class ModalBox extends Component<any> {
         }
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { overlay, opacity, children, className, containerClass, onClose, canClose, ...rest } = this.props;
 
         return (

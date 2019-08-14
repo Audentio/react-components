@@ -20,7 +20,7 @@ export class Badge extends Component<{
         return num;
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, className, size, kind } = this.props;
 
         return (

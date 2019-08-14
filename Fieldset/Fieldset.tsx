@@ -7,7 +7,7 @@ interface FieldsetProps {
 }
 
 export class Fieldset extends Component<FieldsetProps> {
-    render() {
+    public render(): React.ReactNode {
         const { legend, children } = this.props;
 
         return (

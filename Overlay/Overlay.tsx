@@ -14,7 +14,7 @@ export class Overlay extends Component<OverlayProps> {
         removeFromQueue(this, this.props.type);
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children } = this.props;
 
         if (!isNextInQueue(this, this.props.type)) return null;

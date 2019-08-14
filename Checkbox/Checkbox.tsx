@@ -80,7 +80,7 @@ export class Checkbox extends Component<CheckboxProps> {
         this.__checkbox = ref;
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { value: checked, render, errors, kind, className, color, label, disabled } = this.props;
 
         // render function

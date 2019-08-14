@@ -30,7 +30,7 @@ export class Redirect extends Component<RedirectProps> {
         statusCode: 302,
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { to, statusCode, staticContext, history, location, ...props } = this.props;
         let path = to;
 

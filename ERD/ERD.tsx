@@ -83,7 +83,7 @@ export class ERD extends Component<ERDProps, ERDState> {
         true
     );
 
-    render() {
+    public render(): React.ReactNode {
         const { children, delay, nodeName, className, ...props } = this.props;
         const { bcr } = this.state;
         const ContainerNode: any = nodeName;

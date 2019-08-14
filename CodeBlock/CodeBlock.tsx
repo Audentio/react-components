@@ -40,7 +40,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
         theme: 'tomorrow',
     };
 
-    state = {
+    private state = {
         copied: false,
     };
 
@@ -153,7 +153,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
         return code.trim();
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { label, children, language, fixWhiteSpace, className } = this.props;
         let code = this.getSource(children);
 
