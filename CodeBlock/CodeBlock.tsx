@@ -67,7 +67,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
 
     getSource(children) {
         if (typeof children === 'object') {
-            const stringchildren = children.filter(child => typeof child === 'string');
+            const stringchildren = children.filter((child): boolean => typeof child === 'string');
             return stringchildren.join();
         }
 
