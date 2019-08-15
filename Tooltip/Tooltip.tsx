@@ -28,10 +28,15 @@ export interface TooltipProps {
     kind?: 'primary' | 'danger' | 'success' | 'warning';
 
     className?: string;
+
+    /** Disable tooltip */
+    disabled?: boolean;
 }
 
 export function Tooltip(props: TooltipProps) {
-    const { children, content, kind, position = 'top', delay = 0, className } = props;
+    const { children, content, kind, position = 'top', delay = 0, disabled, className } = props;
+
+    if (disabled) return children;
 
     return (
         <OverlayTrigger
