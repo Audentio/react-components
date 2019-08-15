@@ -44,7 +44,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
         copied: false,
     };
 
-    componentDidMount() {
+    public componentDidMount(): void {
         this._isMounted = true;
         this.runHighlighter();
     }
@@ -61,7 +61,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
         this.runHighlighter();
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         this._isMounted = false;
     }
 
@@ -77,7 +77,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
     }
 
     /* eslint-disable */
-    copyToClipboard = str => {
+    private copyToClipboard = (str): void => {
         const el = document.createElement('textarea'); // Create a <textarea> element
         el.value = str; // Set its value to the string that you want copied
         el.setAttribute('readonly', ''); // Make it readonly to be tamper-proof

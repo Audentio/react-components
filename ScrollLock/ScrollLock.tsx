@@ -7,7 +7,7 @@ declare global {
 }
 
 export class ScrollLock extends Component<any> {
-    componentDidMount() {
+    public componentDidMount(): void {
         const originalWidth = document.documentElement.getBoundingClientRect().width;
 
         document.documentElement.style.overflow = 'hidden';
@@ -20,7 +20,7 @@ export class ScrollLock extends Component<any> {
         }
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         document.documentElement.style.overflow = '';
         document.documentElement.style.marginRight = '';
         window.scrollLockEnabled = false;

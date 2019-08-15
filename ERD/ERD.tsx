@@ -46,18 +46,18 @@ export class ERD extends Component<ERDProps, ERDState> {
         delay: 200,
     };
 
-    state: ERDState = {
+    private state: ERDState = {
         bcr: null,
     };
 
-    componentDidMount() {
+    public componentDidMount(): void {
         // start listening to resize
         if (_erd) {
             _erd.listenTo(this.__element, this.onElementResize);
         }
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         if (_erd) {
             // remove any events in queue
             // @ts-ignore
@@ -71,8 +71,8 @@ export class ERD extends Component<ERDProps, ERDState> {
     // onResize callback
     // debounced to avoid degrading perf during resize
     // to make sure it repaints instantly (not recommended) pass delay={0}
-    onElementResize = debounce(
-        (element: HTMLElement) => {
+    private onElementResize = debounce(
+        (element: HTMLElement): void => {
             const bcr = element.getBoundingClientRect();
 
             this.setState({

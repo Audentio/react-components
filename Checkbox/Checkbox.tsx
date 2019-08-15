@@ -46,7 +46,7 @@ export class Checkbox extends Component<CheckboxProps> {
         },
     };
 
-    toggle = e => {
+    private toggle = (e): void => {
         if (e.target && e.target.nodeName === 'A') {
             return;
         }
@@ -63,20 +63,20 @@ export class Checkbox extends Component<CheckboxProps> {
         });
     };
 
-    onKeyDown = (e: React.KeyboardEvent) => {
+    private onKeyDown = (e: React.KeyboardEvent): void => {
         if (e.keyCode === keymap.SPACE || e.keyCode === keymap.ENTER) {
             this.toggle(e);
         }
     };
 
-    removeFocus = () => {
+    private removeFocus = (): void => {
         // remove focus onClick
         if (this.__checkbox) {
             this.__checkbox.blur();
         }
     };
 
-    saveRef = (ref: HTMLDivElement) => {
+    private saveRef = (ref: HTMLDivElement): void => {
         this.__checkbox = ref;
     };
 

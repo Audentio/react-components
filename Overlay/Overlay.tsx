@@ -10,7 +10,7 @@ export class Overlay extends Component<OverlayProps> {
         addToQueue(this, this.props.type);
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         removeFromQueue(this, this.props.type);
     }
 
