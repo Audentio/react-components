@@ -319,7 +319,7 @@ export class Form extends Component<FormProps, FormState> {
     getValidationState(validationErrors) {
         const errors = {};
 
-        validationErrors.inner.forEach(field => {
+        validationErrors.inner.forEach((field): void => {
             errors[field.path] = field.errors;
         });
 

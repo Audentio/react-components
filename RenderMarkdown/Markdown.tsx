@@ -12,7 +12,7 @@ import renderer from './renderer';
 const preprocess = (source: string) => {
     let processed = source;
 
-    preprocessors.forEach(processor => {
+    preprocessors.forEach((processor): void => {
         processed = processor(processed);
     });
 

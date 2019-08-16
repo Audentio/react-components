@@ -52,7 +52,7 @@ function insertToken(token, parent) {
 
     if (attrs) {
         // attributes are preset
-        attrs.forEach(attr => {
+        attrs.forEach((attr): void => {
             // index 0 = attr name
             // index 1 = attr value
             modifiedToken[attr[0]] = attr[1];
@@ -92,7 +92,7 @@ function parseRawTokens(rawTokens) {
     // keep track of number of tags open
     let openTags = 0;
 
-    rawTokens.forEach(token => {
+    rawTokens.forEach((token): void => {
         const _isOpenTag = token.type.indexOf('_open') > -1;
         const _isCloseTag = token.type.indexOf('_close') > -1;
 

@@ -2,7 +2,7 @@ import { Value } from 'slate';
 
 export const convertFromDots = value => {
     const parsedFormValue = {};
-    Object.keys(value).forEach(key => {
+    Object.keys(value).forEach((key): void => {
         const splitKey = key.split('.');
         let currentRef = parsedFormValue;
         for (let i = 0, len = splitKey.length; i < len; i++) {
@@ -26,7 +26,7 @@ export const convertToDots = (value, ele = {}, prefix = '', depth = 0) => {
     if (typeof value === 'object' && value !== null && depth < 5 && !value.length && value instanceof Value === false) {
         const keys = Object.keys(value);
 
-        keys.forEach(key => {
+        keys.forEach((key): void => {
             const combinedKey = prefix ? `${prefix}.${key}` : key;
 
             convertToDots(value[key], ele, combinedKey, depth + 1);
