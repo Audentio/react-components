@@ -15,6 +15,11 @@
     }
 }
 
+.container__block {
+    display: flex;
+    margin-bottom: $gutter;
+}
+
 .checkbox {
     display: inline-block;
     background: $color-inputBgLight;

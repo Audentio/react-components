@@ -1,6 +1,6 @@
 {
   "name": "@audentio/components",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "description": "Common react components",
   "author": "Audentio",
   "license": "ISC",
@@ -14,21 +14,21 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "@audentio/utils": "^4.2.1",
+    "@audentio/utils": "^4.3.0",
     "@mdi/font": "^3.8.95",
-    "@sentry/minimal": "^5.5.0",
+    "@sentry/minimal": "^5.6.1",
     "date-fns": "^2.0.0-beta.3",
     "element-resize-detector": "^1.1.15",
-    "markdown-it": "^9.0.1",
+    "markdown-it": "^9.1.0",
     "markdown-it-container": "^2.0.0",
     "markdown-it-emoji": "^1.4.0",
     "mdi-react": "^5.5.0",
     "memoizee": "^0.4.14",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-focus-lock": "^1.19.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-focus-lock": "^2.0.5",
     "slate": "^0.45.0",
-    "snyk": "^1.198.0",
+    "snyk": "^1.216.4",
     "yup": "^0.27.0"
   },
   "release-it": {
@@ -37,11 +37,11 @@
     }
   },
   "devDependencies": {
-    "@audentio/eslint-config-standard": "^2.2.1",
+    "@audentio/eslint-config-standard": "^2.2.2",
     "enzyme": "^3.10.0",
     "eslint-config-prettier": "^6.0.0",
-    "lolex": "^4.1.0",
-    "release-it": "^12.3.3",
+    "lolex": "^4.2.0",
+    "release-it": "^12.3.5",
     "stylelint-config-audentio": "^1.0.2",
     "stylelint-config-standard": "^18.3.0"
   },
