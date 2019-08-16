@@ -22,6 +22,7 @@ export interface CheckboxProps extends BaseInputProps {
     label?: string | React.ReactNode;
     className?: string;
     color?: string;
+    block?: boolean;
 
     /* override check/unchecked values (booleans by default) */
     values?: {
@@ -81,7 +82,7 @@ export class Checkbox extends Component<CheckboxProps> {
     };
 
     render() {
-        const { value: checked, render, errors, kind, className, color, label, disabled } = this.props;
+        const { value: checked, block, render, errors, kind, className, color, label, disabled } = this.props;
 
         // render function
         // for custom checkboxes (like switch)
@@ -96,7 +97,14 @@ export class Checkbox extends Component<CheckboxProps> {
         }
 
         return (
-            <div className={classy(style.container, disabled && style.container__disabled)} onClick={this.toggle}>
+            <div
+                className={classy(
+                    style.container,
+                    disabled && style.container__disabled,
+                    block && style.container__block
+                )}
+                onClick={this.toggle}
+            >
                 <div
                     style={checked ? { backgroundColor: color } : {}}
                     onKeyDown={this.onKeyDown}
