@@ -20,6 +20,8 @@ interface RedirectProps extends OriginalRedirectProps {
         statusCode?: number;
     };
 
+    to: string | { pathname: string; };
+
     history?: any;
     location?: any;
 }
