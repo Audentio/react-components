@@ -18,10 +18,10 @@
     snyk "^1.198.0"
     typescript-eslint-parser "^22.0.0"
 
-"@audentio/utils@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.npmjs.org/@audentio/utils/-/utils-4.3.0.tgz#d70b32fe2e8d1037c45dc51fabbb255e6be63584"
-  integrity sha512-3+V3U9SXkGsQmhyda5bKyNvgrCf8DgJNCS9LW3zg7lCOU+RDl/2JkEsnMyU7ESWkonWg5wtbfv5xhUEld0/KRg==
+"@audentio/utils@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@audentio/utils/-/utils-4.3.2.tgz#d733f8a99fcae8f0abe822c5f0f15f7464b16811"
+  integrity sha512-3uMZpiwxob0zB9O/WnCR0FcKL2+Da8SGAB3Jkedlou91sOStnEDWVf6YySejI9ObAFkjjAoszQoJCFMUQqVwJg==
   dependencies:
     prettier "1.18.2"
     query-string "^6.8.2"
