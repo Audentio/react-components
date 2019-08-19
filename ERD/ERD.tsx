@@ -46,7 +46,7 @@ export class ERD extends Component<ERDProps, ERDState> {
         delay: 200,
     };
 
-    private state: ERDState = {
+    public state: ERDState = {
         bcr: null,
     };
 

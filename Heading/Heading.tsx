@@ -2,6 +2,8 @@ import { classy } from '@audentio/utils/src/classy';
 import React from 'react';
 import style from './style.scss';
 
+export type HeadingKind = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 export interface HeadingProps {
     className?: string;
     children: React.ReactNode;
@@ -9,7 +11,7 @@ export interface HeadingProps {
     weight?: string;
     style?: { [key: string]: string };
     inlineStyle?: string;
-    kind: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    kind: HeadingKind;
     margin?: boolean;
     noMargin?: boolean;
 }

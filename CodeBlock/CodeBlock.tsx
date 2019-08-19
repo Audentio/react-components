@@ -40,7 +40,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
         theme: 'tomorrow',
     };
 
-    private state = {
+    public state = {
         copied: false,
     };
 

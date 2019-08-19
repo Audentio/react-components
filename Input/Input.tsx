@@ -93,7 +93,7 @@ export class Input extends Component<InputProps, State> {
                value: '',
            };
 
-           private state: State = {
+           public state: State = {
                focus: false,
                color: null,
            };
