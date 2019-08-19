@@ -24,7 +24,7 @@ export class Clickable extends Component<ClickableProps & React.HTMLProps<HTMLEl
         element: 'div',
     };
 
-    onClick = (e: React.MouseEvent<HTMLElement>) => {
+    private onClick = (e: React.MouseEvent<HTMLElement>): void => {
         const { href, history, onClick } = this.props;
 
         if (onClick) {
@@ -61,7 +61,7 @@ export class Clickable extends Component<ClickableProps & React.HTMLProps<HTMLEl
         // don't do anything if a nested anchor or button was clicked
     };
 
-    render() {
+    public render(): React.ReactNode {
         const {
             className,
             href,

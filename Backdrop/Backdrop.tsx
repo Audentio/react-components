@@ -10,7 +10,7 @@ interface Props {
 }
 
 export class Backdrop extends Component<Props> {
-    render() {
+    public render(): React.ReactNode {
         const { children, className } = this.props;
 
         return (

@@ -37,7 +37,7 @@ export class Form extends Component<FormProps, FormState> {
 
     state = initialFormState;
 
-    componentDidMount() {
+    public componentDidMount(): void {
         const { initialValue, onChange } = this.props;
 
         // update form value to use initialValue
@@ -56,7 +56,7 @@ export class Form extends Component<FormProps, FormState> {
         }
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         clearTimeout(this.formUpdateTimer);
     }
 
@@ -232,7 +232,7 @@ export class Form extends Component<FormProps, FormState> {
 
     // update form and read values from input
     // used for input autofill fix
-    updateForm = () => {
+    private updateForm = (): void => {
         if (this.__formRef && !this.formUpdateTimer && this.__formRef.current) {
             // update form in 300ms
             // assuming autofill finishes within this window
@@ -298,7 +298,7 @@ export class Form extends Component<FormProps, FormState> {
         }
     };
 
-    onReset = (e: React.FormEvent<HTMLFormElement>) => {
+    private onReset = (e: React.FormEvent<HTMLFormElement>): void => {
         const { onReset, onChange, initialValue } = this.props;
 
         if (onReset) onReset(e);
@@ -319,7 +319,7 @@ export class Form extends Component<FormProps, FormState> {
     getValidationState(validationErrors) {
         const errors = {};
 
-        validationErrors.inner.forEach(field => {
+        validationErrors.inner.forEach((field): void => {
             errors[field.path] = field.errors;
         });
 
@@ -376,7 +376,7 @@ export class Form extends Component<FormProps, FormState> {
         this.setState({ isValid, errors });
     }, 500);
 
-    onFieldBlur = ({ name }) => {
+    private onFieldBlur = ({ name }) => {
         this.setState(state => ({
             touched: Object.assign({}, state.touched, {
                 [name]: true,
@@ -391,14 +391,14 @@ export class Form extends Component<FormProps, FormState> {
      * - is passed to every form field by `renderFields` method
      * - called by form fields when change occurs
      */
-    onFieldChange = ({ name, value }, ele) => {
+    private onFieldChange = ({ name, value }): void => {
         const { onChange } = this.props;
 
         const newValue: FormValue = Object.assign({}, this.state.value, {
             [name]: value,
         });
 
-        setTimeout(() => {
+        setTimeout((): void => {
             // need to run validation *after* the update from field change
             // since that can potentially change schema
             // if anyone has better ideas i'm all ears - tushar
@@ -431,7 +431,7 @@ export class Form extends Component<FormProps, FormState> {
         return <pre>{JSON.stringify(this.state, null, 4)}</pre>;
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, debug, className, style: inlineStyle, autoComplete, formless = false, ...rest } = this.props;
         /** noValidate to disable native validation. we'll use our own thank you very much */
 

@@ -27,7 +27,7 @@ export function removeFromQueue(instance, keyBase = null) {
     const key = getKey(keyBase);
 
     // remove this instance from queue
-    keyedInstances[key] = keyedInstances[key].filter(entry => instance !== entry.instance);
+    keyedInstances[key] = keyedInstances[key].filter((entry): boolean => instance !== entry.instance);
 
     // update next item in queue
     if (keyedInstances[key].length) {

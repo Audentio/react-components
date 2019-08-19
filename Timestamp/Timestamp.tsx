@@ -91,7 +91,7 @@ export class Timestamp extends Component<TimestampProps> {
         formatOptions: {},
     };
 
-    componentDidMount() {
+    public componentDidMount(): void {
         const { output, liveUpdate } = this.props;
 
         let shouldLiveUpdate = output === 'relative';
@@ -105,7 +105,7 @@ export class Timestamp extends Component<TimestampProps> {
         }
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         this.stopUpdating();
     }
 
@@ -166,7 +166,7 @@ export class Timestamp extends Component<TimestampProps> {
         }
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, className, noWrap, formatOptions } = this.props;
 
         let time_abs;

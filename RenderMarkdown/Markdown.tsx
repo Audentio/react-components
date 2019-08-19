@@ -12,7 +12,7 @@ import renderer from './renderer';
 const preprocess = (source: string) => {
     let processed = source;
 
-    preprocessors.forEach(processor => {
+    preprocessors.forEach((processor): void => {
         processed = processor(processed);
     });
 
@@ -57,7 +57,7 @@ export class RenderMarkdown extends Component<RenderMarkdownProps> {
         noWrap: false,
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { noWrap, children, className, disable, components, ...props } = this.props;
         if (!children) return null;
 

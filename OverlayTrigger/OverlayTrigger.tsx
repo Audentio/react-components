@@ -36,7 +36,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
     /**
      * Cleanup
      */
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         document.body.removeEventListener('mousedown', this.onBodyClick);
 
         if (this.__overlayNode) {
@@ -57,7 +57,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     }
 
-    childMount = (ref: HTMLElement) => {
+    private childMount = (ref: HTMLElement): void => {
         if (!this.__trigger) {
             this.__trigger = ref;
 
@@ -80,7 +80,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     };
 
-    overlayMount = (ref: HTMLElement) => {
+    private overlayMount = (ref: HTMLElement): void => {
         if (this.__overlay !== ref) {
             this.__overlay = ref;
 
@@ -91,7 +91,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     };
 
-    getContainerStyle(elm: HTMLElement) {
+    private getContainerStyle(elm: HTMLElement): {[key: string]: string | number} {
         const { position, fixed } = this.props;
 
         const bcr = elm.getBoundingClientRect();
@@ -130,7 +130,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         return style;
     }
 
-    show = () => {
+    private show = (): void => {
         // Add Autohide listeners
         this.__trigger.addEventListener('mouseleave', this.startAutohideTimer);
         this.__trigger.addEventListener('mouseenter', this.stopAutohideTimer);
@@ -156,7 +156,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     };
 
-    hide = () => {
+    private hide = (): void => {
         // Remove Autohide listeners
         this.__trigger.removeEventListener('mouseleave', this.startAutohideTimer);
         this.__trigger.removeEventListener('mouseenter', this.stopAutohideTimer);
@@ -177,7 +177,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     };
 
-    onBodyClick = (e: MouseEvent) => {
+    private onBodyClick = (e: MouseEvent): void => {
         if (!(e.target instanceof HTMLElement)) {
             return;
         }
@@ -195,7 +195,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         this.hide();
     };
 
-    startAutohideTimer = () => {
+    private startAutohideTimer = (): void => {
         const { autoHide } = this.props;
 
         if (!autoHide) return;
@@ -203,13 +203,13 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         this._autoHideTimer = setTimeout(this.hide, autoHide);
     };
 
-    stopAutohideTimer = () => {
+    private stopAutohideTimer = (): void => {
         if (this._autoHideTimer) {
             clearTimeout(this._autoHideTimer);
         }
     };
 
-    toggle = () => {
+    private toggle = (): void => {
         if (this.state.visible) {
             this.hide();
         } else {
@@ -217,7 +217,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     };
 
-    hasTrigger = triggerName => {
+    private hasTrigger = (triggerName): boolean => {
         const { trigger } = this.props;
 
         if (typeof trigger === 'object') {
@@ -266,7 +266,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         });
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { overlay, trigger } = this.props;
         const { visible, containerStyle } = this.state;
 

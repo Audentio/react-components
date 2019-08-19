@@ -51,7 +51,7 @@ interface LightboxPortalProps {
 }
 
 class LightboxPortal extends Component<LightboxPortalProps> {
-    render() {
+    public render(): React.ReactNode {
         const { noOverlay, onClose, mountNode, className, visible, canClose, children, containerClass } = this.props;
 
         if (!visible) return null;
@@ -74,7 +74,7 @@ export class Modal extends Component<ModalProps, ModalState> {
 
     state: ModalState = {};
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         // destroy mount node
         if (this._mountNode) this._mountNode.remove();
     }
@@ -87,7 +87,7 @@ export class Modal extends Component<ModalProps, ModalState> {
         return this._mountNode;
     }
 
-    onClick = (e: React.SyntheticEvent) => {
+    private onClick = (e: React.SyntheticEvent): void => {
         const { visible } = this.props;
 
         e.preventDefault();
@@ -99,7 +99,7 @@ export class Modal extends Component<ModalProps, ModalState> {
         }
     };
 
-    close = (e: React.SyntheticEvent) => {
+    private close = (e: React.SyntheticEvent): void => {
         const { onClose, visible } = this.props;
 
         e.preventDefault();
@@ -113,7 +113,7 @@ export class Modal extends Component<ModalProps, ModalState> {
         if (onClose) onClose();
     };
 
-    render() {
+    public render(): React.ReactNode {
         const { visible, trigger, className, children, onClose, containerClass, noOverlay } = this.props;
 
         // use visible prop if it's a boolean

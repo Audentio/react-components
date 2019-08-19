@@ -29,7 +29,7 @@ export class ErrorBoundry extends Component<ErrorBoundryProps> {
         });
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, renderError } = this.props;
 
         if (this.state.error) {

@@ -40,11 +40,11 @@ export class CodeBlock extends Component<CodeBlockProps> {
         theme: 'tomorrow',
     };
 
-    state = {
+    private state = {
         copied: false,
     };
 
-    componentDidMount() {
+    public componentDidMount(): void {
         this._isMounted = true;
         this.runHighlighter();
     }
@@ -61,13 +61,13 @@ export class CodeBlock extends Component<CodeBlockProps> {
         this.runHighlighter();
     }
 
-    componentWillUnmount() {
+    public componentWillUnmount(): void {
         this._isMounted = false;
     }
 
     getSource(children) {
         if (typeof children === 'object') {
-            const stringchildren = children.filter(child => typeof child === 'string');
+            const stringchildren = children.filter((child): boolean => typeof child === 'string');
             return stringchildren.join();
         }
 
@@ -77,7 +77,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
     }
 
     /* eslint-disable */
-    copyToClipboard = str => {
+    private copyToClipboard = (str): void => {
         const el = document.createElement('textarea'); // Create a <textarea> element
         el.value = str; // Set its value to the string that you want copied
         el.setAttribute('readonly', ''); // Make it readonly to be tamper-proof
@@ -153,7 +153,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
         return code.trim();
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { label, children, language, fixWhiteSpace, className } = this.props;
         let code = this.getSource(children);
 

@@ -25,7 +25,7 @@ export class Anchor extends Component<AnchorProps> {
         href: '#',
     };
 
-    componentDidMount() {
+    public componentDidMount(): void {
         // avoid double report
         if (__BROWSER__ && !this.props.href) {
             Sentry.captureMessage('Anchor recieved falsy href');
@@ -42,7 +42,7 @@ export class Anchor extends Component<AnchorProps> {
         return href;
     }
 
-    render() {
+    public render(): React.ReactNode {
         const { children, innerRef, external, ...props } = this.props;
 
         const href = this.getHref();
