@@ -1,6 +1,6 @@
 {
   "name": "@audentio/components",
-  "version": "2.2.3",
+  "version": "2.2.5",
   "description": "Common react components",
   "author": "Audentio",
   "license": "ISC",
@@ -15,7 +15,7 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "@audentio/utils": "^4.3.0",
+    "@audentio/utils": "^4.3.2",
     "@mdi/font": "^3.8.95",
     "@sentry/minimal": "^5.6.1",
     "date-fns": "^2.0.0-beta.3",
