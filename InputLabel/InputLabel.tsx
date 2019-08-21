@@ -24,7 +24,9 @@ export function InputLabel(props: InputLabelProps) {
 
             {help && (
                 <Popover position="top" className={style.popover} content={help}>
-                    <HelpCircleIcon className={style.helpTrigger} />
+                    <span>
+                        <HelpCircleIcon className={style.helpTrigger} />
+                    </span>
                 </Popover>
             )}
         </div>
