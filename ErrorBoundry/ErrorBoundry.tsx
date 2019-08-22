@@ -18,11 +18,13 @@ export class ErrorBoundry extends Component<ErrorBoundryProps> {
     }
 
     componentDidCatch(error) {
-        Sentry.captureException(error);
-
         if (__DEV__) {
             console.error(error);
+        } else {
+            console.log(error);
         }
+
+        Sentry.captureException(error);
 
         this.setState({
             error,
