@@ -47,19 +47,16 @@
         color: $color-contentText;
     }
 
-    .container__disabled &,
-    .container__disabled &:hover {
-        cursor: not-allowed;
+    .disabled &,
+    .disabled &:hover {
+        cursor: default;
         color: $color-faintText;
     }
 }
 
-.disabled {
-    pointer-events: none;
-}
-
 .helpTrigger {
     width: 1.2rem;
+    height: 1.2rem;
     position: relative;
     top: 2px;
     margin-left: 5px;

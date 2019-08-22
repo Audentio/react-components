@@ -1,6 +1,6 @@
 {
   "name": "@audentio/components",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "Common react components",
   "author": "Audentio",
   "license": "ISC",
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "release": "release-it",
+    "jest": "./node_modules/.bin/jest",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
@@ -41,9 +42,14 @@
   },
   "devDependencies": {
     "@audentio/eslint-config-standard": "^2.2.2",
+    "@audentio/kinetic": "^2.3.0",
+    "@types/jest": "^24.0.18",
     "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-prettier": "^6.0.0",
+    "jest": "^24.9.0",
     "lolex": "^4.2.0",
+    "raf": "^3.4.1",
     "release-it": "^12.3.5",
     "stylelint-config-audentio": "^1.0.2",
     "stylelint-config-standard": "^18.3.0"

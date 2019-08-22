@@ -1,12 +1,12 @@
-import React from 'react';
+import { mount, shallow } from 'enzyme';
 import lolex from 'lolex';
-import { shallow, mount } from 'enzyme';
+import React from 'react';
 import { Timestamp } from './Timestamp';
 
 describe('<Timestamp>', () => {
     test('Custom format', () => {
         const now = new Date();
-        const rendered = shallow(<Timestamp format="M D yyyy">{new Date()}</Timestamp>);
+        const rendered = shallow(<Timestamp format="M dd yyyy">{new Date()}</Timestamp>);
 
         expect(rendered.text()).toBe(`${now.getMonth() + 1} ${now.getDate()} ${now.getFullYear()}`);
     });
