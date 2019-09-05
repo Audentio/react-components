@@ -9,10 +9,11 @@ import timestampPlugin from './plugin/timestamp';
 
 // exclude: comma delimited list of plugins to disable
 // not an array so it can be memoized easily
-export const getParser = memoize(exclude => {
+export const getParser = memoize((exclude?: string, enableHtml: boolean = false) => {
     const MdIt = new MarkdownIt({
         breaks: true,
         linkify: true,
+        html: enableHtml,
         typographer: false,
         quotes: null,
     });
@@ -139,8 +140,11 @@ function parseRawTokens(rawTokens) {
     return tokens;
 }
 
-export default function parse(source, { exclude } = {}) {
-    const MdItParser = getParser(exclude);
+export default function parse(
+    source: string,
+    { exclude, enableHtml }: { exclude?: string; enableHtml?: boolean } = {}
+) {
+    const MdItParser = getParser(exclude, enableHtml);
     const rawTokens = MdItParser.parse(source, {});
 
     return parseRawTokens(rawTokens);

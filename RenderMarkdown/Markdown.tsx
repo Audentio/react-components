@@ -21,9 +21,10 @@ const preprocess = (source: string) => {
 
 // User parser to convert markdown string into react components
 // output can then be rendered with react
-const renderMarkdown = (rawSource: string, toDisable: string) => {
+type renderMarkdownOpts = { enableHtml?: boolean };
+const renderMarkdown = (rawSource: string, toDisable: string, { enableHtml }: renderMarkdownOpts = {}) => {
     const source = preprocess(rawSource);
-    const parsed = parser(source, { exclude: toDisable });
+    const parsed = parser(source, { exclude: toDisable, enableHtml });
     return parsed;
 };
 
@@ -32,6 +33,11 @@ export interface RenderMarkdownProps {
      * Markdown source string
      */
     children: string;
+
+    /**
+     * Allow HTML in source
+     */
+    enableHtml?: boolean;
 
     /**
      * Render as string, without any wrapper element
@@ -57,15 +63,15 @@ export class RenderMarkdown extends Component<RenderMarkdownProps> {
         noWrap: false,
     };
 
-    public render(): React.ReactNode {
-        const { noWrap, children, className, disable, components, ...props } = this.props;
+    public render() {
+        const { noWrap, children, className, disable, enableHtml, components, ...props } = this.props;
         if (!children) return null;
 
         let rendered_content;
 
         // Try parsing
         try {
-            rendered_content = renderer(renderMarkdown(children, disable), components);
+            rendered_content = renderer(renderMarkdown(children, disable, { enableHtml }), components);
         } catch (err) {
             // silently fail
             // show raw string if parser fails
