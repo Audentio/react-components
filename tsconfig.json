@@ -5,8 +5,9 @@
         "lib": ["es2015", "es2017", "dom"],
         "moduleResolution": "node",
         "jsx": "preserve",
-        "baseUrl": ".",
-        "outDir": "lib",
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": ".",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
@@ -18,5 +19,6 @@
     "typeAcquisition": {
         "enable": true
     },
-    "exclude": ["node_modules", "dist", "lib", "src/**/*.test.tsx"]
+    "include": ["src"],
+    "exclude": ["node_modules", "src/**/*.test.tsx"]
 }
