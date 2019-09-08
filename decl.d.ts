@@ -23,22 +23,11 @@ declare module '*.jpeg' {
     export default __image__;
 }
 
-declare module '*.graphql' {
-    import { DocumentNode } from 'graphql';
-
-    const value: {
-        [key: string]: DocumentNode;
-    };
-
-    export = value;
-}
-
 /**
  * Remove keys from interface
  *
  * e.g. `Omit<MyInterface, 'unwantedKey'>`
  * */
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 type Weaken<T, K extends keyof T> = { [P in keyof T]?: P extends K ? any : T[P] };
 type ComposeProps<T, K extends keyof T> = { [P in keyof T]?: T[P] };
 
