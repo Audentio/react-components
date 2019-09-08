@@ -9,7 +9,7 @@
     "url": "https://github.com/Audentio/react-components.git"
   },
   "scripts": {
-    "build": "tsc -d",
+    "build": "tsc -d && copyfiles src/**/*.scss -u 1 .",
     "release": "release-it",
     "jest": "./node_modules/.bin/jest",
     "snyk-protect": "snyk protect",
@@ -45,6 +45,7 @@
     "@audentio/eslint-config-standard": "^2.2.2",
     "@audentio/kinetic": "^2.4.0",
     "@types/jest": "^24.0.18",
+    "copyfiles": "^2.1.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-prettier": "^6.2.0",
