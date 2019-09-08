@@ -38,9 +38,7 @@ export default class ModalBox extends Component<any> {
         return (
             <FocusLock autoFocus>
                 <div className={classy(style.wrapper, style.visible, containerClass)} style={{ opacity }} {...rest}>
-                    {overlay && (
-                        <Backdrop onClick={onClose} className={style.backdrop} />
-                    )}
+                    {overlay && <Backdrop onClick={onClose} className={style.backdrop} />}
 
                     <div
                         ref={ref => {
@@ -55,7 +53,9 @@ export default class ModalBox extends Component<any> {
                                 this.__nodeInner = ref;
                             }}
                         >
-                            <CloseIcon onClick={onClose} size={20} className={style.dismiss} />
+                            <span onClick={onClose}>
+                                <CloseIcon size={20} className={style.dismiss} />
+                            </span>
                             {children}
                         </div>
                     </div>

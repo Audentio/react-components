@@ -1,7 +1,7 @@
 import { classy } from '@audentio/utils/src/classy';
 import { throttle } from '@audentio/utils/src/throttle';
+import ContentCopyIcon from 'mdi-react/ContentCopyIcon';
 import React, { Component } from 'react';
-import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import style from './CodeBlock.scss';
 
@@ -181,7 +181,7 @@ export class CodeBlock extends Component<CodeBlockProps> {
                         }}
                         className={style.copyToClipboard}
                     >
-                        <Icon>content-copy</Icon>
+                        <ContentCopyIcon />
                     </span>
                 </Tooltip>
 

@@ -91,7 +91,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
         }
     };
 
-    private getContainerStyle(elm: HTMLElement): {[key: string]: string | number} {
+    private getContainerStyle(elm: HTMLElement) {
         const { position, fixed } = this.props;
 
         const bcr = elm.getBoundingClientRect();

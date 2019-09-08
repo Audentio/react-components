@@ -36,7 +36,7 @@ export interface TooltipProps {
 export function Tooltip(props: TooltipProps) {
     const { children, content, kind, position = 'top', delay = 0, disabled, className } = props;
 
-    if (disabled) return children;
+    if (disabled) return <>children</>;
 
     return (
         <OverlayTrigger

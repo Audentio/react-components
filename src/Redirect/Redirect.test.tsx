@@ -3,6 +3,8 @@ import React from 'react';
 import { MemoryRouter, StaticRouter, Switch } from 'react-router';
 import { Redirect } from './Redirect';
 
+declare let __BROWSER__: boolean;
+
 // for MemoryRouter Redirect needs to be inside <Switch> for `from` to work
 // `from` is required so we dont redirect twice (otherwise react-router warns)
 // not required for StaticRouter as it only renders once

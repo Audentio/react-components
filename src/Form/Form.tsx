@@ -132,7 +132,7 @@ export class Form extends Component<FormProps, FormState> {
                 }
 
                 // pass child in to detect initial value onChange
-                const onChange = childValue => this.onFieldChange(childValue, child);
+                const onChange = childValue => this.onFieldChange(childValue);
 
                 return React.cloneElement(child, {
                     onChange,
@@ -375,16 +375,6 @@ export class Form extends Component<FormProps, FormState> {
 
         this.setState({ isValid, errors });
     }, 500);
-
-    private onFieldBlur = ({ name }) => {
-        this.setState(state => ({
-            touched: Object.assign({}, state.touched, {
-                [name]: true,
-            }),
-        }));
-
-        this.validate(this.state.value);
-    };
 
     /**
      * Field change handler

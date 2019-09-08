@@ -8,6 +8,8 @@ package-lock.json
 stats.json
 /.cache
 
+lib
+
 # Logs and temporary files
 *.log
 /logs

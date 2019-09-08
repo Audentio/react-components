@@ -9,30 +9,30 @@
     "url": "https://github.com/Audentio/react-components.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -d",
     "release": "release-it",
     "jest": "./node_modules/.bin/jest",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect;npm run build"
   },
   "dependencies": {
-    "@audentio/utils": "^4.3.2",
+    "@audentio/utils": "^4.3.3",
     "@mdi/font": "^3.8.95",
     "@sentry/minimal": "^5.6.1",
     "@types/react": "^16.9.2",
-    "date-fns": "^2.0.1",
+    "date-fns": "^2.1.0",
     "element-resize-detector": "^1.1.15",
     "markdown-it": "^9.1.0",
     "markdown-it-container": "^2.0.0",
     "markdown-it-emoji": "^1.4.0",
-    "mdi-react": "^5.5.0",
+    "mdi-react": "^6.0.0",
     "memoizee": "^0.4.14",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-focus-lock": "^2.0.5",
     "react-router-dom": "^5.0.1",
     "slate": "^0.45.0",
-    "snyk": "^1.224.0",
+    "snyk": "^1.226.0",
     "tinycolor2": "^1.4.1",
     "yup": "^0.27.0"
   },
