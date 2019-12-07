@@ -1,6 +1,5 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib",
-    "prettier.eslintIntegration": false,
     "editor.formatOnSave": true,
     "breadcrumbs.enabled": true,
     "javascript.updateImportsOnFileMove.enabled": "never",
