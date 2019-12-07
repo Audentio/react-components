@@ -5,16 +5,20 @@
         "lib": ["es2015", "es2017", "dom"],
         "moduleResolution": "node",
         "jsx": "preserve",
-        "baseUrl": ".",
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": ".",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
         "noUnusedLocals": true,
         "allowSyntheticDefaultImports": true,
-        "noErrorTruncation": true
+        "noErrorTruncation": true,
+        "esModuleInterop": true
     },
     "typeAcquisition": {
         "enable": true
     },
-    "exclude": ["node_modules", "dist"]
+    "include": ["src"],
+    "exclude": ["node_modules", "src/**/*.test.tsx"]
 }
