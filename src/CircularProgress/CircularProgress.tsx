@@ -40,7 +40,7 @@ export interface CircularProgressProps {
 
     gapPosition?: 'top' | 'bottom' | 'left' | 'right';
 
-    kind?: 'primary' | 'danger' | 'success' | 'warning' | 'disabled';
+    kind?: 'primary' | 'danger' | 'success' | 'warning' | 'disabled' | 'alt1' | 'alt2';
 
     /** Indeterminate progress (animated) */
     indeterminate?: boolean;
