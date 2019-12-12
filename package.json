@@ -13,7 +13,7 @@
     "release": "release-it",
     "jest": "./node_modules/.bin/jest",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect;npm run build"
+    "prepublish": "yarn run snyk-protect;npm run build"
   },
   "dependencies": {
     "@audentio/utils": "^4.3.3",
@@ -32,7 +32,7 @@
     "react-focus-lock": "^2.0.5",
     "react-router-dom": "^5.0.1",
     "slate": "^0.45.0",
-    "snyk": "^1.226.0",
+    "snyk": "^1.258.2",
     "tinycolor2": "^1.4.1",
     "yup": "^0.27.0"
   },
