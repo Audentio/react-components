@@ -7,7 +7,7 @@ package-lock.json
 /coverage
 stats.json
 /.cache
-*/
+# */
 !src
 !jest
 
