@@ -1,6 +1,6 @@
 import { classy } from '@audentio/utils/src/classy';
 import { withRouter } from '@audentio/utils/src/withRouter';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import { Anchor, AnchorProps } from '../Anchor';
 import { Badge } from '../Badge';
 import style from './TabLinks.scss';
@@ -54,15 +54,16 @@ export class TabLinks extends Component<TabLinksProps & React.Props<HTMLUListEle
     static Link = TabLink;
 
     public componentDidMount(): void {
-        const ref = this.__tabLinks.current;
+        const ref = this.__tabLinks.current as HTMLUListElement;
         const { location } = this.props;
-        if (location && ref.scrollWidth > ref.clientWidth) {
-            const tabLinks = ref.children;
-            for (const tabLink of tabLinks) {
+        if (location && ref.scrollWidth === ref.clientWidth) {
+            const tabLinksCollection = ref.children;
+            const tabLinks = Array.prototype.slice.call(tabLinksCollection);
+            tabLinks.forEach(tabLink => {
                 if (tabLink.children[0].className.indexOf('tabLink__active') > -1) {
                     ref.scrollLeft = tabLink.offsetLeft - tabLink.offsetWidth;
                 }
-            }
+            });
         }
     }
 
@@ -74,8 +75,7 @@ export class TabLinks extends Component<TabLinksProps & React.Props<HTMLUListEle
         return (
             <ul
                 className={classy(style.tabLinks, className)}
-                ref={this.__tabLinks}
-                staticontext={props.staticContext}
+                ref={this.__tabLinks as RefObject<HTMLUListElement>}
                 {...props}
             >
                 {this.props.children}
