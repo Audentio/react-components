@@ -2,7 +2,7 @@ import { classy } from '@audentio/utils/src/classy';
 import { passProps } from '@audentio/utils/src/passProps';
 import React, { Component } from 'react';
 import { Anchor } from '../Anchor';
-import { Icon } from '../Icon';
+import { Icon, IconType } from '../Icon';
 import { MousemoveGlow } from '../MousemoveGlow';
 import style from './Button.scss';
 
@@ -13,7 +13,7 @@ export interface ButtonProps {
     size?: 'large' | 'small' | 'xs';
     bg?: 'light' | 'dark';
     href?: string;
-    icon?: string;
+    icon?: IconType;
     iconPlacement?: 'left' | 'right';
     type?: 'button' | 'submit' | 'reset';
     weight?: 'normal' | 'semi' | 'bold';
@@ -111,13 +111,17 @@ export class Button extends Component<ButtonProps> {
         const buttonContent = (
             <>
                 {icon && iconPlacement === 'left' ? (
-                    <Icon className={classy(style.icon, style.icon_left)}>{icon}</Icon>
+                    <Icon className={classy(style.icon, style.icon_left)} name={icon}>
+                        {icon}
+                    </Icon>
                 ) : (
                     ''
                 )}
                 {children}
                 {icon && iconPlacement === 'right' ? (
-                    <Icon className={classy(style.icon, style.icon_right)}>{icon}</Icon>
+                    <Icon className={classy(style.icon, style.icon_right)} name={icon}>
+                        {icon}
+                    </Icon>
                 ) : (
                     ''
                 )}
