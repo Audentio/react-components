@@ -11,6 +11,7 @@ interface Props {
     indeterminate?: boolean;
     progressColor?: string;
     trackColor?: string;
+    progressGradient?: { from: string; to: string };
 }
 
 export class Progress extends Component<Props> {
@@ -30,7 +31,7 @@ export class Progress extends Component<Props> {
     }
 
     public render(): React.ReactNode {
-        const { kind, stroke, indeterminate, className, progressColor, trackColor } = this.props;
+        const { kind, stroke, indeterminate, className, progressColor, trackColor, progressGradient } = this.props;
         const trackStyle: { [key: string]: any } = {};
 
         if (stroke > 0) trackStyle.height = stroke;
@@ -48,7 +49,13 @@ export class Progress extends Component<Props> {
             >
                 <div
                     className={style.progress}
-                    style={Object.assign(this.getScale(), { backgroundColor: progressColor })}
+                    style={Object.assign(
+                        this.getScale(),
+                        { backgroundColor: progressColor },
+                        progressGradient && {
+                            backgroundImage: `linear-gradient(90deg, ${progressGradient.from}, ${progressGradient.to})`,
+                        }
+                    )}
                 />
             </div>
         );
