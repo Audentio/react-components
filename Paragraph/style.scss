@@ -1,0 +1,32 @@
+.paragraph {
+    word-break: break-word;
+    line-height: 1.7;
+
+    &:not(.noMargin) {
+        margin-bottom: 1em;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--secondary {
+        color: $color-secondaryText;
+    }
+
+    &--faint {
+        color: $color-faintText;
+    }
+
+    &--large {
+        font-size: $font-size-lg;
+    }
+
+    &--medium {
+        font-size: $font-size-md;
+    }
+
+    &--small {
+        font-size: $font-size-sm;
+    }
+}
