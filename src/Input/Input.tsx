@@ -59,6 +59,7 @@ export interface InputProps extends BaseInputProps {
     maxLength?: number;
     prefix?: any;
     size?: 'small' | 'large';
+    skipDateFormat?: boolean;
 
     /**
      * HTML5 autocomplete attribute
@@ -116,7 +117,7 @@ export class Input extends Component<InputProps, State> {
         const { triggerFormUpdate, value } = this.props;
 
         // not needed if input has value
-        if (value && (typeof value === 'string' && value.length > 0)) return;
+        if (value && typeof value === 'string' && value.length > 0) return;
 
         // not needed on non-touch
         if (!('ontouchstart' in window)) return;
@@ -156,6 +157,7 @@ export class Input extends Component<InputProps, State> {
             autoFocus,
             autoComplete,
             errors,
+            skipDateFormat,
             ...rest
         } = this.props;
         let { initialValue } = this.props;
@@ -182,10 +184,12 @@ export class Input extends Component<InputProps, State> {
         }
 
         let inputValue = value;
-        if (type === 'datetime-local') {
-            inputValue = Timestamp.format(value, 'yyyy-MM-DDTHH:mm');
-        } else if (type === 'date') {
-            inputValue = Timestamp.format(value, 'yyyy-MM-DD');
+        if (!skipDateFormat) {
+            if (type === 'datetime-local') {
+                inputValue = Timestamp.format(value, 'yyyy-MM-DDTHH:mm');
+            } else if (type === 'date') {
+                inputValue = Timestamp.format(value, 'yyyy-MM-DD');
+            }
         }
 
         return (
