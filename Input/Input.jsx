@@ -74,7 +74,7 @@ export class Input extends Component {
             inputValue = Timestamp.format(value, 'yyyy-MM-ddTHH:mm');
         }
         else if (type === 'date') {
-            inputValue = Timestamp.format(value, 'yyyy-MM-dd');
+            inputValue = value;
         }
         return (<div className={classy(className, style.container, type === 'textarea' && style.container__textarea, size && style[`container__size__${size}`], stylish(style, 'container', {
             block,
