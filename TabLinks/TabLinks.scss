@@ -1,0 +1,38 @@
+.tabLinks {
+    display: flex;
+    margin-left: -10px;
+    margin-bottom: $gutter;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include scrollbar();
+}
+
+.tabLink {
+    white-space: nowrap;
+    padding: $gutter 0;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+    color: $color-faintText;
+    margin-top: -$gutter-sm;
+    font-weight: $font-weight-semibold;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+        color: $color-emphasisText;
+    }
+
+    &__active {
+        border-bottom-color: $color-secondary;
+        color: $color-emphasisText;
+    }
+}
+
+.badge {
+    margin-left: 5px;
+}
