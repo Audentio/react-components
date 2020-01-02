@@ -48,6 +48,7 @@ export interface InputProps extends BaseInputProps {
     maxLength?: number;
     prefix?: any;
     size?: 'small' | 'large';
+    skipDateFormat?: boolean;
     /**
      * HTML5 autocomplete attribute
      * https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute

@@ -28,7 +28,7 @@ export interface CircularProgressProps {
     /** the gap degree of half circle, 0 - 360 */
     gapDegree?: number;
     gapPosition?: 'top' | 'bottom' | 'left' | 'right';
-    kind?: 'primary' | 'danger' | 'success' | 'warning' | 'disabled' | 'alt1' | 'alt2';
+    kind?: 'primary' | 'danger' | 'success' | 'warning' | 'disabled';
     /** Indeterminate progress (animated) */
     indeterminate?: boolean;
     trackClass?: string;
