@@ -59,7 +59,6 @@ export interface InputProps extends BaseInputProps {
     maxLength?: number;
     prefix?: any;
     size?: 'small' | 'large';
-    skipDateFormat?: boolean;
 
     /**
      * HTML5 autocomplete attribute
@@ -157,7 +156,6 @@ export class Input extends Component<InputProps, State> {
             autoFocus,
             autoComplete,
             errors,
-            skipDateFormat,
             ...rest
         } = this.props;
         let { initialValue } = this.props;
