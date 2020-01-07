@@ -11,7 +11,9 @@ import { InputLabel } from '../InputLabel';
 import style from './Select.scss';
 
 export interface SelectProps extends Omit<BaseInputProps, 'schema'> {
-    options?: Array<{ value: any; label: string }>;
+    options?:
+        | Array<{ value: any; label: string }>
+        | Array<{ label: string; options: Array<{ value: any; label: string }> }>;
     multi?: boolean;
     placeholder?: string;
     name: string;
