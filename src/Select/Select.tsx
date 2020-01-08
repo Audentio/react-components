@@ -11,7 +11,7 @@ import { InputLabel } from '../InputLabel';
 import style from './Select.scss';
 
 export interface SelectProps extends Omit<BaseInputProps, 'schema'> {
-    options?: Array<{ value: any; label: string }>;
+    options?: Array<{ value: any; label: string; options?: Array<{ value: any; label: string }> }>;
     multi?: boolean;
     placeholder?: string;
     name: string;
@@ -112,6 +112,18 @@ export class Select extends Component<SelectProps> {
         } else if (value !== undefined && !loadOptions) {
             // single value
             selectValue = options.find(opt => opt[valueKey] === value);
+
+            if (!selectValue) {
+                options.forEach(opt => {
+                    if (opt.options && opt.options.length) {
+                        opt.options.forEach(opt2 => {
+                            if (opt2[valueKey] === value) {
+                                selectValue = opt2;
+                            }
+                        });
+                    }
+                });
+            }
         }
 
         return {
