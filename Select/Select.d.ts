@@ -5,6 +5,10 @@ export interface SelectProps extends Omit<BaseInputProps, 'schema'> {
     options?: Array<{
         value: any;
         label: string;
+        options?: Array<{
+            value: any;
+            label: string;
+        }>;
     }>;
     multi?: boolean;
     placeholder?: string;
@@ -63,6 +67,10 @@ export declare class Select extends Component<SelectProps> {
         options: {
             value: any;
             label: string;
+            options?: {
+                value: any;
+                label: string;
+            }[];
         }[];
     };
     renderSelect(): JSX.Element;

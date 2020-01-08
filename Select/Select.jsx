@@ -43,6 +43,17 @@ export class Select extends Component {
         else if (value !== undefined && !loadOptions) {
             // single value
             selectValue = options.find(opt => opt[valueKey] === value);
+            if (!selectValue) {
+                options.forEach(opt => {
+                    if (opt.options && opt.options.length) {
+                        opt.options.forEach(opt2 => {
+                            if (opt2[valueKey] === value) {
+                                selectValue = opt2;
+                            }
+                        });
+                    }
+                });
+            }
         }
         return {
             classNamePrefix: 'reactSelect',
