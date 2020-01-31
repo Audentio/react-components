@@ -19,10 +19,7 @@ export interface BaseInputProps {
      * Don't pass these directly. For value pass values to form and let it pass them down to inputs
      * Number value will not work consistently unless you pass type="number"
      */
-    onChange?: (d: {
-        name: string;
-        value: any;
-    }) => void;
+    onChange?: (d: { name: string; value: any }) => void;
     onBlur?: Function;
     triggerFormUpdate?: Function;
     /**
@@ -64,10 +61,7 @@ export interface InputProps extends BaseInputProps {
      *  - Number value will not work consistently unless you pass type="number"
      */
     initialValue?: string | number;
-    onKeyPress?: (d: {
-        name: string;
-        value: any;
-    }) => void;
+    onKeyPress?: (d: { name: string; value: any }) => void;
 }
 interface State {
     focus: boolean;
