@@ -1,0 +1,32 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.circle {
+    shape-rendering: geometricPrecision;
+    transform: translate3d(0, 0, 0); // smoother edges
+
+    &__indeterminate {
+        animation: spin 800ms linear infinite;
+    }
+}
+
+.circle_stroke {
+    stroke: $color-primary;
+}
+
+.circle_track {
+    stroke: $color-inputBg;
+}
+
+@each $kind, $color in $color-presets {
+    .#{$kind} .circle_stroke {
+        stroke: $color;
+    }
+}

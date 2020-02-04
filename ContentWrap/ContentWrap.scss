@@ -1,0 +1,23 @@
+.contentWrap {
+    max-width: $contentWidth;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: $gutter-sm;
+    padding-right: $gutter-sm;
+    transition: 250ms cubic-bezier(0.4, 0, 0.22, 1);
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__narrow {
+        max-width: $contentWidth_narrow;
+    }
+
+    @include breakpoint($screen-lg) {
+        padding-left: $gutter-lg;
+        padding-right: $gutter-lg;
+    }
+}

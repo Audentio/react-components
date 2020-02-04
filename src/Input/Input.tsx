@@ -116,7 +116,7 @@ export class Input extends Component<InputProps, State> {
         const { triggerFormUpdate, value } = this.props;
 
         // not needed if input has value
-        if (value && (typeof value === 'string' && value.length > 0)) return;
+        if (value && typeof value === 'string' && value.length > 0) return;
 
         // not needed on non-touch
         if (!('ontouchstart' in window)) return;
@@ -183,9 +183,9 @@ export class Input extends Component<InputProps, State> {
 
         let inputValue = value;
         if (type === 'datetime-local') {
-            inputValue = Timestamp.format(value, 'yyyy-MM-DDTHH:mm');
+            inputValue = Timestamp.format(value, 'yyyy-MM-ddTHH:mm');
         } else if (type === 'date') {
-            inputValue = Timestamp.format(value, 'yyyy-MM-DD');
+            inputValue = value;
         }
 
         return (

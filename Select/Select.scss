@@ -1,0 +1,186 @@
+$select-height: $input-height;
+$select-height-lg: $input-height-lg;
+$select-height-small: $input-height-sm;
+$select-bg: $color-inputBg !default;
+
+/**
+ * React Select
+ * ============
+ * Created by Jed Watson and Joss Mackison for KeystoneJS, http://www.keystonejs.com/
+ * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
+ * MIT License: https://github.com/JedWatson/react-select
+*/
+/* stylelint-disable */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 150px;
+    color: $color-contentText;
+
+    &__isFetching {
+        opacity: 0.8;
+    }
+
+    &__disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    :global(.inputgroup) &,
+    &__block {
+        margin-bottom: $gutter;
+    }
+
+    &__small {
+        font-size: $font-size-sm;
+        // width: 170px;
+
+        :global {
+            .reactSelect__control {
+                min-height: $select-height-small;
+            }
+
+            .reactSelect__indicator {
+                padding: 0 3px;
+            }
+        }
+    }
+
+    &__large {
+        font-size: $font-size;
+
+        :global {
+            .reactSelect__control {
+                min-height: $select-height-lg;
+            }
+
+            .reactSelect__indicator {
+                padding: 0 5px;
+            }
+        }
+    }
+
+    &__block {
+        width: 100%;
+    }
+}
+body {
+    :global {
+        .reactSelect__multi-value {
+            background: lighten($select-bg, 10%);
+
+            &__label {
+                color: $color-contentText;
+                font-size: 90%;
+                padding: 5px;
+            }
+
+            &__remove {
+                padding-left: 2px;
+                padding-right: 2px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+                &:hover {
+                    background: $color-danger;
+                    color: white;
+                }
+            }
+        }
+
+        .reactSelect {
+            position: relative;
+
+            &__placeholder {
+                color: $color-faintText;
+            }
+
+            &__control {
+                background-color: $select-bg;
+                border: 0;
+                min-height: $select-height;
+
+                &--is-focused {
+                    box-shadow: 0 0 0 2px $color-primary;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &__single-value,
+            &__input {
+                color: $color-contentText;
+            }
+
+            &__single-value {
+                // clips avatar
+                // height: 20px;
+                // line-height: 20px;
+            }
+
+            &__indicator-separator {
+                background-color: $color-border;
+            }
+
+            &__menu {
+                // background: $select-bg;
+                z-index: 99;
+                background: $color-inputBg;
+            }
+
+            &__option {
+                &--is-focused {
+                    background: lighten($select-bg, 5%);
+                }
+
+                &--is-selected {
+                    background: $select-bg;
+                }
+
+                &--is-disabled {
+                    // opacity: 0.4;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:active {
+                    background: lighten($select-bg, 10%);
+                }
+            }
+
+            &__indicator {
+                color: $color-faintText;
+                padding: 8px 4px;
+
+                svg {
+                    height: 16px;
+                    width: 16px;
+                }
+
+                &:hover {
+                    color: $color-contentText;
+                }
+            }
+
+            &__clear-indicator {
+                &:hover {
+                    color: $color-danger;
+                }
+            }
+        }
+
+        .reactSelect__option--is-selected.reactSelect__option--is-focused {
+            background: lighten($color-primary, 5%);
+        }
+
+        .reactSelect__menu-notice--no-options {
+            color: $color-faintText;
+        }
+    }
+}
