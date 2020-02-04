@@ -38,10 +38,12 @@ export class Select extends Component {
         let selectValue;
         if (value instanceof Array) {
             // multiple values
+            // @ts-ignore
             selectValue = value.map(val => options.find(opt => opt[valueKey] === val));
         }
         else if (value !== undefined && !loadOptions) {
             // single value
+            // @ts-ignore
             selectValue = options.find(opt => opt[valueKey] === value);
         }
         return {
