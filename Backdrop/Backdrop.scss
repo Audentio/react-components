@@ -1,9 +1,0 @@
-.backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    // background: transparentize($color: adjust-color($color-primary, $lightness: -30%, $saturation: -50%), $amount: 0.2);
-    background: $color-backdropBg;
-}
