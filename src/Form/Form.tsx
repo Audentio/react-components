@@ -444,6 +444,7 @@ export class Form extends Component<FormProps, FormState> {
                 onReset={this.onReset}
                 onSubmit={this.onSubmit}
                 autoComplete={autoComplete}
+                method="post"
                 {...passProps(rest)}
             >
                 {this.renderFields(children, true)}
