@@ -32,6 +32,8 @@ export interface AvatarProps {
     outline?: boolean;
 
     border?: boolean;
+
+    title?: string;
 }
 
 const sizeMap = {
@@ -136,7 +138,18 @@ export class Avatar extends Component<AvatarProps> {
     }
 
     public render(): React.ReactNode {
-        const { href, onClick, border, outline, size, round, className, entity = {}, getEntityHref } = this.props;
+        const {
+            href,
+            onClick,
+            border,
+            outline,
+            size,
+            round,
+            className,
+            entity = {},
+            getEntityHref,
+            title,
+        } = this.props;
 
         if (entity) {
             const image = this.getEntityImage(entity);
@@ -162,6 +175,7 @@ export class Avatar extends Component<AvatarProps> {
                         style[`size__${size}`],
                         outline && style.avatar__outline
                     )}
+                    title={title}
                 >
                     {image ? <img key={image} src={image} alt="" /> : abbr}
                 </Element>
