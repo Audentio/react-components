@@ -9,7 +9,7 @@
     "url": "https://github.com/Audentio/react-components.git"
   },
   "scripts": {
-    "build": "tsc -d && copyfiles src/**/*.scss -u 1 .",
+    "build": "tsc -d && copyfiles src/**/*.scss -u 1 . &&  copyfiles src/**/**/*.scss -u 1 .",
     "release": "release-it",
     "jest": "./node_modules/.bin/jest",
     "snyk-protect": "snyk protect",
