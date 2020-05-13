@@ -92,7 +92,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
     };
 
     private getContainerStyle(elm: HTMLElement) {
-        const { position, fixed } = this.props;
+        const { position, fixed, triggerStyle = {} } = this.props;
 
         const bcr = elm.getBoundingClientRect();
 
@@ -103,6 +103,7 @@ export class OverlayTrigger extends Component<OverlayTriggerProps> {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            ...triggerStyle,
         };
 
         const top = bcr.top + (fixed ? 0 : window.scrollY);
