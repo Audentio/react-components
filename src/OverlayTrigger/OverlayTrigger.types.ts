@@ -45,6 +45,8 @@ export interface OverlayTriggerProps {
     // if mouse is kept on popover/trigger, timer resets
     // only enabled if a number is passed (0 = hide on mouseleave on trigger)
     autoHide?: number | false;
+
+    triggerStyle?: React.CSSProperties;
 }
 
 export interface OverlayTriggerState {
