@@ -1,3 +1,13 @@
+# Deprecated
+
+Updated component library can be found here:
+
+npm: [@audentio/stuff](https://www.npmjs.com/package/@audentio/stuff)
+
+github: https://github.com/Audentio/components
+
+------
+
 ## Usage
 
 `yarn add @audentio/components`
